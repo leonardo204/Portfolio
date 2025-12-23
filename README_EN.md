@@ -29,6 +29,7 @@ AI services and development tools from professional work.
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM-based intent classification test tool | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
+| [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
 
 ---
 
@@ -53,6 +54,7 @@ Personal macOS/iOS/watchOS app projects.
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)

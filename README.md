@@ -29,6 +29,7 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM 기반 Intent 분류 테스트 도구 | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
+| [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
 
 ---
 
@@ -53,6 +54,7 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)
