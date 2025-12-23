@@ -16,6 +16,7 @@
 
 | 프로젝트 | 설명 | 주요 기술 |
 |---------|------|----------|
+| [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트용 채팅 애플리케이션 | Electron, Node.js, Express |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 시스템 | Python, FastAPI, Azure OpenAI |
 | [Trace Tool (Tammi Performance Chart)](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 도구 | Electron, Node.js, Chart.js, ADB |
 | [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 날짜/시간 및 캘린더 앱 | Swift, SwiftUI, AppKit |
