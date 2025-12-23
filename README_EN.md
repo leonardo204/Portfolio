@@ -17,7 +17,9 @@ Building user-centric tools and services using diverse tech stacks including Ele
 
 ## Work Projects
 
-AI services and development tools from professional work.
+Projects from professional work.
+
+### AI & Voice (2023-2025)
 
 | Project | Description | Tech |
 |:--------|:------------|:-----|
@@ -29,13 +31,28 @@ AI services and development tools from professional work.
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM-based intent classification test tool | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
-| [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
-| [RClient ICS](./projects/rclient-ics/) | Cloud image streaming client | `C` `AES` `libpng` |
-| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
-| [Tizen Sample Player](./projects/tizen-sample-player/) | Tizen TV video player | `C#` `.NET` `FFmpeg` |
+
+### Cloud UI (2018-2022)
+
+| Project | Description | Tech |
+|:--------|:------------|:-----|
+| [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
 | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
+
+### Media Player (2021-2022)
+
+| Project | Description | Tech |
+|:--------|:------------|:-----|
+| [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
 | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
-| [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI) | `C` `JNI` `Android NDK` |
+
+### Dev Tools & Libraries (~2021)
+
+| Project | Description | Tech |
+|:--------|:------------|:-----|
+| [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
+| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
+| [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI support) | `C` `JNI` `Android NDK` |
 
 ---
 
@@ -43,13 +60,13 @@ AI services and development tools from professional work.
 
 Personal macOS/iOS/watchOS app projects.
 
-| Project | Description | Tech |
-|:--------|:------------|:-----|
-| [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar app | `Swift` `SwiftUI` `AppKit` |
-| [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` |
-| [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI-powered lottery number analysis app | `Swift` `SwiftUI` `REST API` |
-| [zeroPlayer](./projects/zero-player/) | YouTube playlist music player | `Swift` `UIKit` `YoutubeKit` |
-| [blackRadio](./projects/black-radio/) | watchOS Korean radio streaming | `Swift` `SwiftUI` `AVFoundation` |
+| Project | Description | Tech | Year |
+|:--------|:------------|:-----|:----:|
+| [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar app | `Swift` `SwiftUI` `AppKit` | 2025 |
+| [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` | 2025 |
+| [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI-powered lottery number analysis app | `Swift` `SwiftUI` `REST API` | 2025 |
+| [zeroPlayer](./projects/zero-player/) | YouTube playlist music player | `Swift` `UIKit` `YoutubeKit` | 2022 |
+| [blackRadio](./projects/black-radio/) | watchOS Korean radio streaming | `Swift` `SwiftUI` `AVFoundation` | 2022 |
 
 ---
 

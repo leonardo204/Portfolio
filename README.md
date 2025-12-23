@@ -17,11 +17,13 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 
 ## Work Projects
 
-업무에서 진행한 AI 서비스 및 개발 도구 프로젝트입니다.
+업무에서 진행한 프로젝트입니다.
+
+### AI & Voice (2023-2025)
 
 | 프로젝트 | 설명 | 기술 |
 |:--------|:-----|:-----|
-| [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트용 채팅 앱 | `Electron` `Node.js` `Express` |
+| [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA Electron](./projects/summa-electron/) | AI 기반 실시간 회의록 자동 생성 | `Electron` `React` `Whisper MLX` |
 | [KT Kiosk Agent](./projects/kt-kiosk-agent/) | KT STT 기반 Windows 키오스크 음성 에이전트 | `C#` `.NET 6` `gRPC` |
@@ -29,13 +31,28 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM 기반 Intent 분류 테스트 도구 | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
-| [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
-| [RClient ICS](./projects/rclient-ics/) | 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
-| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
-| [Tizen Sample Player](./projects/tizen-sample-player/) | Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
+
+### Cloud UI (2018-2022)
+
+| 프로젝트 | 설명 | 기술 |
+|:--------|:-----|:-----|
+| [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
 | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
+
+### Media Player (2021-2022)
+
+| 프로젝트 | 설명 | 기술 |
+|:--------|:-----|:-----|
+| [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
 | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV 비디오 플레이어 | `Swift` `AVFoundation` |
-| [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI) | `C` `JNI` `Android NDK` |
+
+### Dev Tools & Libraries (~2021)
+
+| 프로젝트 | 설명 | 기술 |
+|:--------|:-----|:-----|
+| [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
+| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
+| [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI 지원) | `C` `JNI` `Android NDK` |
 
 ---
 
@@ -43,13 +60,13 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 
 개인적으로 진행한 macOS/iOS/watchOS 앱 프로젝트입니다.
 
-| 프로젝트 | 설명 | 기술 |
-|:--------|:-----|:-----|
-| [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 캘린더 앱 | `Swift` `SwiftUI` `AppKit` |
-| [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 | `Swift` `SwiftUI` `Mermaid` |
-| [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI 기반 로또 번호 분석 앱 | `Swift` `SwiftUI` `REST API` |
-| [zeroPlayer](./projects/zero-player/) | YouTube 플레이리스트 음악 플레이어 | `Swift` `UIKit` `YoutubeKit` |
-| [blackRadio](./projects/black-radio/) | watchOS 한국 라디오 스트리밍 | `Swift` `SwiftUI` `AVFoundation` |
+| 프로젝트 | 설명 | 기술 | 연도 |
+|:--------|:-----|:-----|:----:|
+| [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 캘린더 앱 | `Swift` `SwiftUI` `AppKit` | 2025 |
+| [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 | `Swift` `SwiftUI` `Mermaid` | 2025 |
+| [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI 기반 로또 번호 분석 앱 | `Swift` `SwiftUI` `REST API` | 2025 |
+| [zeroPlayer](./projects/zero-player/) | YouTube 플레이리스트 음악 플레이어 | `Swift` `UIKit` `YoutubeKit` | 2022 |
+| [blackRadio](./projects/black-radio/) | watchOS 한국 라디오 스트리밍 | `Swift` `SwiftUI` `AVFoundation` | 2022 |
 
 ---
 
