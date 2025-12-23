@@ -174,4 +174,4 @@ This tool plays a crucial role in identifying performance bottlenecks and valida
 
 ---
 
-*This project was developed as part of the KT Viettel AI Media Service project.*
+*This project was developed for AI voice service QA and performance analysis.*
