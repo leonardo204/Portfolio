@@ -6,10 +6,26 @@
 
 ## About Me
 
-**AI/Voice Services & Desktop Application Developer**
+**Software Engineer** | Embedded · Cross-Platform · AI Services
 
-Specializing in speech recognition (STT/TTS), LLM-based AI agents, and cross-platform desktop application development.
-Building user-centric tools and services using diverse tech stacks including Electron, Swift, Python, and C#.
+Over 10 years of development experience across various platforms, from embedded systems to AI services.
+
+#### Career Journey
+
+- **Embedded/Native Development** (~2021)
+  - C/C++ based set-top box client and middleware development
+  - Native library implementation using Android NDK and JNI
+  - Network protocol (NAT-PMP, WebSocket) and encryption (AES) module development
+
+- **Cross-Platform Media Apps** (2018-2022)
+  - Video player development for Samsung Tizen, Apple TV, iOS platforms
+  - Cloud-based UI streaming service client implementation
+  - Utilized media frameworks including FFmpeg, AVFoundation
+
+- **AI/Voice Services** (2023-Present)
+  - STT/TTS based speech recognition service development
+  - LLM-based AI agent and multi-agent system development
+  - Electron-based desktop tools and test automation
 
 > *"Making complex technology simple, through simple interfaces"*
 
