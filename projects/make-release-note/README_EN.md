@@ -31,7 +31,7 @@ It reads previous release note PDFs to automatically parse version information a
 - **Auto Filename**: Version-based automatic filename generation
 
 ### Multi-site Support
-- TBroad, CJ, JEJU, CCS, HCN, CNM
+- Multiple cable TV operators supported
 - Site-specific template application
 
 ---
