@@ -30,6 +30,12 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
 | [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
+| [RClient ICS](./projects/rclient-ics/) | 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
+| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
+| [Tizen Sample Player](./projects/tizen-sample-player/) | Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
+| [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
+| [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV 비디오 플레이어 | `Swift` `AVFoundation` |
+| [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI) | `C` `JNI` `Android NDK` |
 
 ---
 
@@ -55,6 +61,7 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)

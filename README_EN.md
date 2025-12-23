@@ -30,6 +30,12 @@ AI services and development tools from professional work.
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
 | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
+| [RClient ICS](./projects/rclient-ics/) | Cloud image streaming client | `C` `AES` `libpng` |
+| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
+| [Tizen Sample Player](./projects/tizen-sample-player/) | Tizen TV video player | `C#` `.NET` `FFmpeg` |
+| [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
+| [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
+| [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI) | `C` `JNI` `Android NDK` |
 
 ---
 
@@ -55,6 +61,7 @@ Personal macOS/iOS/watchOS app projects.
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)
