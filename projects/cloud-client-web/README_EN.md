@@ -70,22 +70,6 @@ It receives real-time image frames from the server via WebSocket and renders the
 
 ---
 
-## Frame Protocol
-
-| Field | Size | Description |
-|-------|------|-------------|
-| Command | 1 byte | Command type |
-| Image Format | 1 byte | Image format |
-| Left/Top/Right/Bottom | 2 bytes each | Cell position |
-| Width/Height | 2 bytes each | Image dimensions |
-| Animation | 1 byte | Animation flag |
-| Image Count | 1 byte | Image count |
-| Field Length | 2 bytes | Field length |
-| Image Size | 4 bytes | Image data size |
-| Image Data | variable | Image binary |
-
----
-
 ## Role & Contributions
 
 - WebSocket-based streaming client development
