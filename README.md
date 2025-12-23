@@ -38,6 +38,7 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 |:--------|:-----|:-----|
 | [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
 | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
+| [Cloud Client Web](./projects/cloud-client-web/) | 클라우드 이미지 스트리밍 웹 테스트 클라이언트 | `JavaScript` `WebSocket` `Canvas` |
 
 ### Media Player (2021-2022)
 

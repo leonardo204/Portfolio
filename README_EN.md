@@ -38,6 +38,7 @@ Projects from professional work.
 |:--------|:------------|:-----|
 | [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
 | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
+| [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web test client | `JavaScript` `WebSocket` `Canvas` |
 
 ### Media Player (2021-2022)
 
