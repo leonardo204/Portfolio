@@ -174,10 +174,4 @@ This tool plays a crucial role in identifying performance bottlenecks and valida
 
 ---
 
-## Related Links
-
-- **Repository**: [Bitbucket - ais-vtt-qa-trace-chart](https://bitbucket.org/altimedia/ais-vtt-qa-trace-chart/src/main/)
-
----
-
 *This project was developed as part of the KT Viettel AI Media Service project.*

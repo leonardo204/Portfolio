@@ -174,10 +174,4 @@
 
 ---
 
-## 관련 링크
-
-- **Repository**: [Bitbucket - ais-vtt-qa-trace-chart](https://bitbucket.org/altimedia/ais-vtt-qa-trace-chart/src/main/)
-
----
-
 *이 프로젝트는 KT Viettel AI Media Service 프로젝트의 일환으로 개발되었습니다.*
