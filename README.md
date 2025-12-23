@@ -79,4 +79,4 @@ Electron, Swift, Python, C# 등 다양한 기술 스택을 활용하여 사용�
 
 ---
 
-<sub>Last updated: 2024</sub>
+<sub>Last updated: 2025</sub>

@@ -79,4 +79,4 @@ Personal macOS/iOS/watchOS app projects.
 
 ---
 
-<sub>Last updated: 2024</sub>
+<sub>Last updated: 2025</sub>
