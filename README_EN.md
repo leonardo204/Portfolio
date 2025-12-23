@@ -16,6 +16,7 @@ This portfolio showcases various projects I have worked on.
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
+| [A2A Multi-Agent System](./projects/a2a-sample/) | A2A protocol-based multi-agent orchestration system | Python, FastAPI, Azure OpenAI |
 | [Trace Tool (Tammi Performance Chart)](./projects/trace-tool/) | AI Agent performance monitoring and visualization tool | Electron, Node.js, Chart.js, ADB |
 | [MiniCalendar](./projects/mini-calendar/) | macOS menu bar date/time and calendar app | Swift, SwiftUI, AppKit |
 | [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor (Mermaid/PlantUML support) | Swift, SwiftUI, Mermaid |
@@ -47,9 +48,7 @@ This portfolio showcases various projects I have worked on.
 
 ## Contact
 
-- Email: [Email Address]
-- GitHub: [GitHub Profile Link]
-- LinkedIn: [LinkedIn Profile Link]
+- Email: zerolive7@gmail.com
 
 ---
 

@@ -16,6 +16,7 @@
 
 | 프로젝트 | 설명 | 주요 기술 |
 |---------|------|----------|
+| [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 시스템 | Python, FastAPI, Azure OpenAI |
 | [Trace Tool (Tammi Performance Chart)](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 도구 | Electron, Node.js, Chart.js, ADB |
 | [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 날짜/시간 및 캘린더 앱 | Swift, SwiftUI, AppKit |
 | [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 (Mermaid/PlantUML 지원) | Swift, SwiftUI, Mermaid |
@@ -47,9 +48,7 @@
 
 ## 연락처
 
-- Email: [이메일 주소]
-- GitHub: [GitHub 프로필 링크]
-- LinkedIn: [LinkedIn 프로필 링크]
+- Email: zerolive7@gmail.com
 
 ---
 
