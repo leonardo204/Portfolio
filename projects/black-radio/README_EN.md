@@ -2,7 +2,7 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> watchOS 한국 라디오 스트리밍 앱
+> watchOS Korean Radio Streaming App
 
 ![Platform](https://img.shields.io/badge/platform-watchOS-lightgrey)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
@@ -10,56 +10,56 @@
 
 ---
 
-## 개요
+## Overview
 
-**blackRadio**는 Apple Watch에서 한국 주요 라디오 방송을 청취할 수 있는 watchOS 네이티브 앱입니다. KBS, MBC, SBS의 주요 라디오 채널을 지원하며, 현재 방송 중인 프로그램 정보와 썸네일을 실시간으로 표시합니다.
+**blackRadio** is a watchOS native app that allows you to listen to major Korean radio broadcasts on Apple Watch. It supports major radio channels from KBS, MBC, and SBS, displaying currently broadcasting program information and thumbnails in real-time.
 
-iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오를 청취할 수 있으며, 워치페이스 컴플리케이션을 통해 빠르게 앱에 접근할 수 있습니다.
+Listen to radio anytime, anywhere with just your Apple Watch and AirPods without an iPhone, and quickly access the app through watch face complications.
 
 ---
 
-## 주요 기능
+## Key Features
 
-### 라디오 채널 지원
-- **KBS**: KBS 1라디오, Happy FM, Classic FM, Cool FM
-- **MBC**: FM4U, 표준FM
+### Radio Channel Support
+- **KBS**: KBS 1Radio, Happy FM, Classic FM, Cool FM
+- **MBC**: FM4U, Standard FM
 - **SBS**: Power FM, Love FM
 
-### 실시간 프로그램 정보
-- **현재 방송 표시**: 실시간으로 현재 방송 중인 프로그램 정보 제공
-- **썸네일 이미지**: 프로그램 이미지를 함께 표시
-- **자동 업데이트**: 프로그램 변경 시 자동으로 정보 갱신
+### Real-time Program Information
+- **Current Broadcast Display**: Real-time currently broadcasting program information
+- **Thumbnail Images**: Display program images alongside information
+- **Auto Update**: Automatic information refresh when programs change
 
-### watchOS 최적화 UI
-- **직관적인 채널 선택**: 스크롤 가능한 채널 버튼 목록
-- **Marquee 텍스트**: 긴 프로그램 제목도 스크롤 애니메이션으로 표시
-- **볼륨 컨트롤**: Digital Crown 연동 볼륨 조절
-- **컴플리케이션**: 워치페이스에서 바로 앱 실행
+### watchOS Optimized UI
+- **Intuitive Channel Selection**: Scrollable channel button list
+- **Marquee Text**: Long program titles displayed with scroll animation
+- **Volume Control**: Digital Crown integrated volume adjustment
+- **Complications**: Launch app directly from watch face
 
-### 오디오 스트리밍
-- **백그라운드 재생**: 앱을 종료해도 재생 지속
-- **스트림 관리**: 안정적인 스트리밍 연결 유지
+### Audio Streaming
+- **Background Playback**: Playback continues even when app is closed
+- **Stream Management**: Maintains stable streaming connection
 
 ---
 
-## 스크린샷
+## Screenshots
 
-> 스크린샷 추가 예정
+> Screenshots coming soon
 
 <!--
-### 채널 선택 화면
-![채널 선택](./images/channel-select.png)
+### Channel Selection Screen
+![Channel Selection](./images/channel-select.png)
 
-### 재생 화면
-![재생 화면](./images/now-playing.png)
+### Now Playing Screen
+![Now Playing](./images/now-playing.png)
 -->
 
 ---
 
-## 기술 스택
+## Tech Stack
 
-| 분류 | 기술 |
-|------|------|
+| Category | Technology |
+|----------|------------|
 | **Language** | Swift 5.9 (100%) |
 | **UI Framework** | SwiftUI |
 | **Platform** | watchOS |
@@ -69,7 +69,7 @@ iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오�
 
 ---
 
-## 아키텍처
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -79,10 +79,11 @@ iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오�
 │  │                      Views Layer                            │ │
 │  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
 │  │  │ ContentView  │  │ PlayingView  │  │   VolumeView     │  │ │
-│  │  │ (채널 선택)   │  │  (재생 화면)  │  │  (볼륨 조절)     │  │ │
+│  │  │ (Channel     │  │  (Now        │  │  (Volume         │  │ │
+│  │  │  Selection)  │  │   Playing)   │  │   Control)       │  │ │
 │  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
 │  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              MarqueeText (스크롤 텍스트)               │  │ │
+│  │  │              MarqueeText (Scroll Text)                │  │ │
 │  │  └──────────────────────────────────────────────────────┘  │ │
 │  └────────────────────────────────────────────────────────────┘ │
 │                              │                                   │
@@ -90,9 +91,11 @@ iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오�
 │  │                    Manager Layer                            │ │
 │  │  ┌──────────────────┐  ┌──────────────┐  ┌──────────────┐  │ │
 │  │  │  ProgramManager  │  │ StreamManager│  │ AudioPlayer  │  │ │
-│  │  │  - KBS 메타데이터 │  │ - 스트림 연결 │  │ - 오디오 재생 │  │ │
-│  │  │  - MBC 메타데이터 │  │ - 연결 관리   │  │ - 볼륨 제어   │  │ │
-│  │  │  - SBS 메타데이터 │  │              │  │ - 백그라운드  │  │ │
+│  │  │  - KBS Metadata  │  │ - Stream     │  │ - Audio      │  │ │
+│  │  │  - MBC Metadata  │  │   Connection │  │   Playback   │  │ │
+│  │  │  - SBS Metadata  │  │ - Connection │  │ - Volume     │  │ │
+│  │  │                  │  │   Management │  │   Control    │  │ │
+│  │  │                  │  │              │  │ - Background │  │ │
 │  │  └──────────────────┘  └──────────────┘  └──────────────┘  │ │
 │  └────────────────────────────────────────────────────────────┘ │
 │                              │                                   │
@@ -100,14 +103,14 @@ iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오�
 │  │                   Utilities & Models                        │ │
 │  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
 │  │  │ ProgramInfo  │  │  LogUtils    │  │ SwiftUI+Extension│  │ │
-│  │  │   (Model)    │  │   (로깅)     │  │    (확장)        │  │ │
+│  │  │   (Model)    │  │   (Logging)  │  │    (Extensions)  │  │ │
 │  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
 │  └────────────────────────────────────────────────────────────┘ │
 │                              │                                   │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │                   Watch Extension                           │ │
 │  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │        ComplicationController (워치페이스 연동)        │  │ │
+│  │  │        ComplicationController (Watch Face Integration)│  │ │
 │  │  └──────────────────────────────────────────────────────┘  │ │
 │  └────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
@@ -123,69 +126,69 @@ iPhone 없이도 Apple Watch와 AirPods만으로 언제 어디서나 라디오�
 
 ---
 
-## 주요 컴포넌트
+## Key Components
 
 ### ProgramManager
-각 방송사별 API를 호출하여 현재 방송 중인 프로그램의 메타데이터(제목, 썸네일)를 가져옵니다.
-- KBS/MBC: JSONP 형식 파싱
-- SBS: JSON 형식 파싱
-- 시간 기반 프로그램 매칭
+Calls APIs for each broadcasting station to retrieve metadata (title, thumbnail) of currently broadcasting programs.
+- KBS/MBC: JSONP format parsing
+- SBS: JSON format parsing
+- Time-based program matching
 
 ### AudioPlayer
-오디오 스트리밍을 담당하며, watchOS 환경에 최적화된 재생 기능을 제공합니다.
-- AVFoundation 기반 오디오 재생
-- 백그라운드 재생 지원
-- 스트림 연결 상태 관리
+Handles audio streaming, providing playback functionality optimized for the watchOS environment.
+- AVFoundation-based audio playback
+- Background playback support
+- Stream connection status management
 
 ### MarqueeText
-watchOS의 작은 화면에서 긴 프로그램 제목을 표시하기 위한 커스텀 스크롤 텍스트 컴포넌트입니다.
+Custom scrolling text component for displaying long program titles on watchOS small screen.
 
 ---
 
-## 개발 과정에서의 도전과 해결
+## Challenges and Solutions
 
-### 1. watchOS 오디오 스트리밍
-**도전**: watchOS의 제한된 리소스 환경에서 안정적인 오디오 스트리밍이 필요했습니다.
+### 1. watchOS Audio Streaming
+**Challenge**: Stable audio streaming was needed in watchOS's limited resource environment.
 
-**해결**: AVFoundation의 스트리밍 기능을 활용하고, 연결 상태를 모니터링하여 끊김 발생 시 자동으로 재연결하는 로직을 구현했습니다.
+**Solution**: Utilized AVFoundation's streaming capabilities and implemented logic to automatically reconnect when disconnection occurs by monitoring connection status.
 
-### 2. 방송사별 API 통합
-**도전**: KBS, MBC, SBS 각각 다른 API 형식(JSON, JSONP)을 사용하여 통합 처리가 필요했습니다.
+### 2. Broadcasting Station API Integration
+**Challenge**: KBS, MBC, and SBS each used different API formats (JSON, JSONP), requiring unified processing.
 
-**해결**: ProgramManager에서 방송사별 파싱 로직을 분리하고, 공통 인터페이스(ProgramInfo)로 데이터를 표준화했습니다.
+**Solution**: Separated parsing logic by broadcasting station in ProgramManager and standardized data through a common interface (ProgramInfo).
 
-### 3. 작은 화면 UI 최적화
-**도전**: Apple Watch의 작은 화면에서 프로그램 정보를 효과적으로 표시해야 했습니다.
+### 3. Small Screen UI Optimization
+**Challenge**: Needed to effectively display program information on Apple Watch's small screen.
 
-**해결**: MarqueeText 컴포넌트를 개발하여 긴 텍스트도 스크롤 애니메이션으로 전체 내용을 확인할 수 있도록 했습니다.
-
----
-
-## 역할 및 기여
-
-- watchOS 앱 전체 아키텍처 설계 및 구현
-- SwiftUI 기반 watchOS UI 개발
-- 오디오 스트리밍 엔진 구현
-- 방송사별 API 연동 및 메타데이터 파싱
-- 워치페이스 컴플리케이션 개발
-- MarqueeText 커스텀 컴포넌트 개발
+**Solution**: Developed MarqueeText component to allow viewing full content of long text through scroll animation.
 
 ---
 
-## 시스템 요구사항
+## Role & Contributions
 
-| 항목 | 요구사항 |
-|------|---------|
-| **watchOS** | watchOS 9.0 이상 |
-| **개발 환경** | Xcode 15.0+ |
-| **언어** | Swift 5.9 |
+- Overall watchOS app architecture design and implementation
+- SwiftUI-based watchOS UI development
+- Audio streaming engine implementation
+- Broadcasting station API integration and metadata parsing
+- Watch face complication development
+- MarqueeText custom component development
 
 ---
 
-## 관련 링크
+## System Requirements
+
+| Item | Requirement |
+|------|-------------|
+| **watchOS** | watchOS 9.0 or later |
+| **Build Environment** | Xcode 15.0+ |
+| **Language** | Swift 5.9 |
+
+---
+
+## Related Links
 
 - **GitHub**: [leonardo204/blackRadio_watchOS](https://github.com/leonardo204/blackRadio_watchOS)
 
 ---
 
-*이 프로젝트는 Apple Watch에서 한국 라디오를 청취하기 위한 개인 프로젝트입니다.*
+*This project is a personal project for listening to Korean radio on Apple Watch.*

@@ -2,7 +2,7 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> macOS 메뉴바 날짜/시간 및 캘린더 앱
+> macOS Menu Bar Date/Time and Calendar App
 
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
@@ -11,68 +11,68 @@
 
 ---
 
-## 개요
+## Overview
 
-**MiniCalendar**는 macOS 메뉴바에서 날짜와 시간을 사용자 정의 형식으로 표시하고, 클릭 시 깔끔한 미니 캘린더를 제공하는 앱입니다. 기본 시스템 시계의 대안으로, 더 다양한 커스터마이징 옵션과 직관적인 캘린더 탐색 기능을 제공합니다.
+**MiniCalendar** is an app that displays date and time in customizable formats in the macOS menu bar and provides a clean mini calendar on click. As an alternative to the default system clock, it offers more customization options and intuitive calendar navigation.
 
-macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와 AppKit을 활용하여 네이티브 macOS 경험을 제공합니다.
-
----
-
-## 주요 기능
-
-### 메뉴바 날짜/시간 표시
-- 사용자 정의 가능한 날짜 및 시간 형식
-- 12시간/24시간 형식 선택
-- 초 단위 표시 옵션
-- AM/PM 표시 설정
-
-### 미니 캘린더 팝업
-- 클릭 한 번으로 깔끔한 캘린더 확인
-- 마우스 휠/트랙패드 스크롤로 월 이동
-- `<<` / `>>` 버튼으로 연도 이동
-- 현재 날짜 강조 표시
-
-### 다양한 커스터마이징
-- 날짜 형식 자유롭게 설정 (예: "12월 20일 (금)", "2025-12-20")
-- 요일 표시 옵션
-- 주 시작 요일 선택 (일요일/월요일)
-- 로그인 시 자동 실행 설정
+Developed to enhance macOS user productivity, this app leverages SwiftUI and AppKit to provide a native macOS experience.
 
 ---
 
-## 스크린샷
+## Key Features
 
-### 메뉴바 & 캘린더 팝업
-*메뉴바에서 날짜/시간 확인 및 캘린더 표시*
+### Menu Bar Date/Time Display
+- Customizable date and time formats
+- 12-hour/24-hour format selection
+- Seconds display option
+- AM/PM display settings
 
-![캘린더 팝업](./images/calendar.png)
+### Mini Calendar Popup
+- Clean calendar view with a single click
+- Month navigation via mouse wheel/trackpad scroll
+- Year navigation with `<<` / `>>` buttons
+- Current date highlighting
 
-### 메뉴바 표시
-*사용자 정의 형식으로 날짜와 시간 표시*
-
-![메뉴바 표시](./images/sample1.png)
-
-### 환경설정
-*다양한 커스터마이징 옵션 제공*
-
-![환경설정](./images/sample2-preference.png)
+### Various Customizations
+- Flexible date format settings (e.g., "Dec 20 (Fri)", "2025-12-20")
+- Weekday display options
+- Week start day selection (Sunday/Monday)
+- Launch at login setting
 
 ---
 
-## 기술 스택
+## Screenshots
 
-| 분류 | 기술 |
-|------|------|
+### Menu Bar & Calendar Popup
+*Check date/time and display calendar from menu bar*
+
+![Calendar Popup](./images/calendar.png)
+
+### Menu Bar Display
+*Display date and time in custom format*
+
+![Menu Bar Display](./images/sample1.png)
+
+### Preferences
+*Various customization options*
+
+![Preferences](./images/sample2-preference.png)
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
 | **Language** | Swift 5.9 |
 | **UI Framework** | SwiftUI + AppKit |
 | **Build Tool** | XcodeGen |
 | **Minimum OS** | macOS 13.0 (Ventura) |
-| **Architecture** | Apple Silicon + Intel 지원 |
+| **Architecture** | Apple Silicon + Intel Support |
 
 ---
 
-## 아키텍처
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -82,7 +82,7 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 │  │              Menu Bar Item                    │   │
 │  │  ┌────────────────────────────────────────┐  │   │
 │  │  │  Date/Time Display (Customizable)      │  │   │
-│  │  │  "12월 23일 (월) 11:24"                │  │   │
+│  │  │  "Dec 23 (Mon) 11:24"                  │  │   │
 │  │  └────────────────────────────────────────┘  │   │
 │  └──────────────────────────────────────────────┘   │
 │                        │ Click                       │
@@ -112,84 +112,84 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 
 ---
 
-## 날짜 형식 지원
+## Date Format Support
 
-사용자 정의 날짜 형식을 위한 기호를 지원합니다:
+Supported symbols for custom date formats:
 
-| 기호 | 설명 | 예시 |
-|------|------|------|
-| `yyyy` | 4자리 연도 | 2025 |
-| `yy` | 2자리 연도 | 25 |
-| `M` | 월 (1-12) | 12 |
-| `MM` | 월 (01-12) | 12 |
-| `d` | 일 (1-31) | 23 |
-| `dd` | 일 (01-31) | 23 |
-| `E` | 요일 축약 | 월 |
-| `EEEE` | 요일 전체 | 월요일 |
+| Symbol | Description | Example |
+|--------|-------------|---------|
+| `yyyy` | 4-digit year | 2025 |
+| `yy` | 2-digit year | 25 |
+| `M` | Month (1-12) | 12 |
+| `MM` | Month (01-12) | 12 |
+| `d` | Day (1-31) | 23 |
+| `dd` | Day (01-31) | 23 |
+| `E` | Weekday abbreviated | Mon |
+| `EEEE` | Weekday full | Monday |
 
-**형식 예시:**
-- `M월 d일 (E)` → "12월 23일 (월)"
+**Format Examples:**
+- `MMM d (E)` → "Dec 23 (Mon)"
 - `yyyy-MM-dd` → "2025-12-23"
-- `yyyy년 M월 d일 EEEE` → "2025년 12월 23일 월요일"
+- `EEEE, MMMM d, yyyy` → "Monday, December 23, 2025"
 
 ---
 
-## 설치 방법
+## Installation
 
-### DMG 설치 (권장)
-1. [Releases](https://github.com/leonardo204/MiniCalendar/releases) 페이지에서 최신 DMG 다운로드
-2. DMG 파일 열기
-3. MiniCalendar를 Applications 폴더로 드래그
+### DMG Installation (Recommended)
+1. Download the latest DMG from [Releases](https://github.com/leonardo204/MiniCalendar/releases)
+2. Open the DMG file
+3. Drag MiniCalendar to the Applications folder
 
-### 소스 빌드
+### Build from Source
 ```bash
-# 저장소 클론
+# Clone repository
 git clone https://github.com/leonardo204/MiniCalendar.git
 cd MiniCalendar
 
-# Xcode 프로젝트 생성
+# Generate Xcode project
 xcodegen generate
 
-# Xcode에서 빌드
+# Build in Xcode
 open MiniCalendar.xcodeproj
 ```
 
 ---
 
-## 개발 과정에서의 도전과 해결
+## Challenges and Solutions
 
-### 1. 메뉴바 아이템 커스터마이징
-**도전**: macOS 메뉴바에 사용자 정의 텍스트와 상호작용 가능한 팝오버를 표시하는 것이 필요했습니다.
+### 1. Menu Bar Item Customization
+**Challenge**: Displaying custom text and interactive popover in the macOS menu bar was required.
 
-**해결**: NSStatusItem과 NSPopover를 활용하여 메뉴바 아이템을 구현하고, SwiftUI 뷰를 NSHostingController로 래핑하여 모던한 UI를 제공했습니다.
+**Solution**: Implemented menu bar item using NSStatusItem and NSPopover, wrapping SwiftUI views with NSHostingController for a modern UI.
 
-### 2. 날짜 형식 유연성
-**도전**: 다양한 사용자 니즈를 충족하기 위해 유연한 날짜 형식 시스템이 필요했습니다.
+### 2. Date Format Flexibility
+**Challenge**: A flexible date format system was needed to meet diverse user needs.
 
-**해결**: DateFormatter의 포맷 문자열을 직접 사용자가 입력할 수 있도록 하여 최대한의 유연성을 제공했습니다.
+**Solution**: Allowed users to directly input DateFormatter format strings for maximum flexibility.
 
-### 3. 로그인 시 자동 실행
-**도전**: macOS의 보안 정책에 맞춰 로그인 시 자동 실행 기능을 구현해야 했습니다.
+### 3. Launch at Login
+**Challenge**: Implementing launch at login feature in compliance with macOS security policies.
 
-**해결**: ServiceManagement 프레임워크의 SMAppService를 활용하여 안전하게 로그인 항목을 관리했습니다.
-
----
-
-## 역할 및 기여
-
-- macOS 네이티브 앱 아키텍처 설계
-- SwiftUI + AppKit 하이브리드 UI 구현
-- 메뉴바 아이템 및 팝오버 시스템 개발
-- 사용자 설정 저장 및 관리 시스템 구현
-- XcodeGen 기반 프로젝트 구성
+**Solution**: Utilized SMAppService from the ServiceManagement framework to safely manage login items.
 
 ---
 
-## 관련 링크
+## Role & Contributions
+
+- macOS native app architecture design
+- SwiftUI + AppKit hybrid UI implementation
+- Menu bar item and popover system development
+- User settings storage and management system implementation
+- XcodeGen-based project configuration
+
+---
+
+## Related Links
 
 - **GitHub**: [leonardo204/MiniCalendar](https://github.com/leonardo204/MiniCalendar)
 - **License**: MIT
 
 ---
 
-*이 프로젝트는 macOS 사용자 경험 향상을 위해 개발된 오픈소스 프로젝트입니다.*
+*This project is an open-source project developed to enhance the macOS user experience.*

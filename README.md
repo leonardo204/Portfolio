@@ -1,5 +1,9 @@
 # Portfolio
 
+🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
+
+---
+
 ## 소개
 
 안녕하세요! 저는 AI 서비스 및 개발 도구를 전문으로 하는 소프트웨어 엔지니어입니다.

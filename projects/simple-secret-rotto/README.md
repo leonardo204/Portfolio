@@ -1,5 +1,7 @@
 # SimpleSecretRotto (행운로또)
 
+🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
+
 > AI 기반 로또 번호 분석 및 추천 앱
 
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20iPadOS%20%7C%20macOS%20%7C%20visionOS-lightgrey)

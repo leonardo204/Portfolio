@@ -1,5 +1,7 @@
 # Tammi Performance Chart (Trace Tool)
 
+🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
+
 > AI Agent 성능 모니터링 및 시각화 도구 v2.0.0
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue)

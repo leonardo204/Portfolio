@@ -2,7 +2,7 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> macOS용 실시간 프리뷰 마크다운 에디터
+> Real-time Preview Markdown Editor for macOS
 
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
@@ -10,75 +10,75 @@
 
 ---
 
-## 개요
+## Overview
 
-**MarkdownEditor**는 macOS 네이티브 마크다운 에디터로, 에디터와 프리뷰가 나란히 표시되며 편집 내용이 즉시 반영됩니다. Mermaid 다이어그램과 PlantUML 시퀀스 다이어그램을 실시간으로 렌더링하고, 에디터와 프리뷰 간 동기화된 스크롤 기능을 제공합니다.
+**MarkdownEditor** is a native macOS markdown editor that displays editor and preview side by side with instant reflection of edits. It renders Mermaid diagrams and PlantUML sequence diagrams in real-time, and provides synchronized scrolling between editor and preview.
 
-개발자와 기술 문서 작성자를 위해 설계된 이 앱은 마크다운 문서 작성의 생산성을 크게 향상시킵니다.
-
----
-
-## 주요 기능
-
-### 실시간 프리뷰
-- 에디터와 프리뷰 화면 나란히 표시
-- 편집 내용 즉시 반영
-- 마크다운 문법 하이라이팅
-
-### 다이어그램 지원
-- **Mermaid**: 플로우차트, 시퀀스 다이어그램, 간트 차트 등
-- **PlantUML**: 시퀀스 다이어그램, 클래스 다이어그램 등
-- 실시간 다이어그램 렌더링
-
-### 동기화 스크롤
-- 에디터와 프리뷰 간 스크롤 위치 자동 동기화
-- 긴 문서에서도 정확한 위치 매칭
-
-### 테마 설정
-- 에디터와 프리뷰 각각 독립적인 라이트/다크 테마 선택
-- 작업 환경에 맞는 유연한 테마 조합
-
-### 마크다운 툴바
-- **텍스트 서식**: 굵게, 기울임, 취소선
-- **제목**: H1 ~ H6 레벨
-- **링크/이미지**: 빠른 삽입 버튼
-- **코드 블록**: 인라인 코드 및 코드 펜스
-
-### 파일 관리
-- 다중 파일 드래그 앤 드롭 열기
-- 이미 열린 파일 자동 감지 및 해당 창으로 이동
-- 탭 기반 다중 문서 편집
+Designed for developers and technical writers, this app significantly enhances productivity in markdown document creation.
 
 ---
 
-## 스크린샷
+## Key Features
 
-### 메인 에디터 화면
-*에디터와 실시간 프리뷰가 나란히 표시되는 메인 화면*
+### Real-time Preview
+- Side-by-side editor and preview display
+- Instant reflection of edits
+- Markdown syntax highlighting
 
-![메인 화면](./images/screenshot-main.png)
+### Diagram Support
+- **Mermaid**: Flowcharts, sequence diagrams, Gantt charts, etc.
+- **PlantUML**: Sequence diagrams, class diagrams, etc.
+- Real-time diagram rendering
 
-### 앱 아이콘
+### Synchronized Scrolling
+- Automatic scroll position synchronization between editor and preview
+- Accurate position matching even in long documents
 
-![앱 아이콘](./images/icon.png)
+### Theme Settings
+- Independent light/dark theme selection for editor and preview
+- Flexible theme combinations for your work environment
+
+### Markdown Toolbar
+- **Text Formatting**: Bold, italic, strikethrough
+- **Headings**: H1 ~ H6 levels
+- **Links/Images**: Quick insert buttons
+- **Code Blocks**: Inline code and code fences
+
+### File Management
+- Open multiple files via drag and drop
+- Auto-detection of already opened files with navigation
+- Tab-based multi-document editing
 
 ---
 
-## 기술 스택
+## Screenshots
 
-| 분류 | 기술 |
-|------|------|
+### Main Editor Screen
+*Main screen with editor and real-time preview side by side*
+
+![Main Screen](./images/screenshot-main.png)
+
+### App Icon
+
+![App Icon](./images/icon.png)
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
 | **Language** | Swift 5.9 (88%) |
 | **UI Framework** | SwiftUI + AppKit |
 | **Diagram Rendering** | Mermaid, PlantUML |
 | **Markdown Parsing** | Native Swift Parser |
 | **Build Tool** | Xcode 15.0+ |
 | **Minimum OS** | macOS 13.0 (Ventura) |
-| **Architecture** | Apple Silicon + Intel 지원 |
+| **Architecture** | Apple Silicon + Intel Support |
 
 ---
 
-## 아키텍처
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -120,90 +120,89 @@
 
 ---
 
-## 설치 방법
+## Installation
 
-### DMG 설치 (권장)
-1. [Releases](https://github.com/leonardo204/MarkdownEditor/releases) 페이지에서 최신 DMG 다운로드
-2. DMG 파일 열기
-3. MarkdownEditor를 Applications 폴더로 드래그
-4. 첫 실행 시 Gatekeeper 승인 필요
+### DMG Installation (Recommended)
+1. Download the latest DMG from [Releases](https://github.com/leonardo204/MarkdownEditor/releases)
+2. Open the DMG file
+3. Drag MarkdownEditor to the Applications folder
+4. Gatekeeper approval required on first launch
 
-### 기본 앱으로 설정
+### Set as Default App
 
-**Finder에서:**
-1. `.md` 파일 우클릭
-2. "정보 가져오기" 선택
-3. "다음으로 열기" 섹션에서 MarkdownEditor 선택
-4. "모두 변경" 클릭
+**In Finder:**
+1. Right-click on a `.md` file
+2. Select "Get Info"
+3. Choose MarkdownEditor in the "Open With" section
+4. Click "Change All"
 
-**터미널에서:**
+**In Terminal:**
 ```bash
-# duti 설치 (Homebrew 필요)
+# Install duti (Homebrew required)
 brew install duti
 
-# 기본 앱 설정
+# Set as default app
 duti -s com.yourcompany.MarkdownEditor .md all
 ```
 
-### 소스 빌드
+### Build from Source
 ```bash
-# 저장소 클론
+# Clone repository
 git clone https://github.com/leonardo204/MarkdownEditor.git
 cd MarkdownEditor
 
-# Xcode에서 빌드
+# Build in Xcode
 xcodebuild -scheme MarkdownEditor -configuration Release
 
-# 또는 Xcode에서 직접 열기
+# Or open directly in Xcode
 open MarkdownEditor.xcodeproj
 ```
 
 ---
 
-## 개발 과정에서의 도전과 해결
+## Challenges and Solutions
 
-### 1. 에디터-프리뷰 스크롤 동기화
-**도전**: 마크다운 소스와 렌더링된 HTML 간의 정확한 위치 매칭이 필요했습니다. 두 뷰의 높이가 다르고, 다이어그램 등의 렌더링 결과가 예측 불가능하여 단순 비율 계산으로는 정확한 동기화가 어려웠습니다.
+### 1. Editor-Preview Scroll Synchronization
+**Challenge**: Accurate position matching between markdown source and rendered HTML was required. Simple ratio calculations were insufficient due to different view heights and unpredictable rendering results like diagrams.
 
-**해결**: 줄 단위 마크다운 파싱과 HTML 요소 매핑을 통해 정확한 위치 계산 알고리즘을 구현했습니다. 스크롤 이벤트 디바운싱으로 무한 루프를 방지했습니다.
+**Solution**: Implemented precise position calculation algorithm through line-by-line markdown parsing and HTML element mapping. Prevented infinite loops with scroll event debouncing.
 
-### 2. Mermaid 다이어그램 실시간 렌더링
-**도전**: Mermaid 라이브러리를 네이티브 macOS 앱에 통합하고, 편집 중 실시간으로 다이어그램을 업데이트해야 했습니다.
+### 2. Real-time Mermaid Diagram Rendering
+**Challenge**: Integrating the Mermaid library into a native macOS app and updating diagrams in real-time during editing was required.
 
-**해결**: WKWebView를 활용하여 Mermaid.js를 로드하고, JavaScript 브릿지를 통해 Swift에서 다이어그램 코드를 전달하여 렌더링했습니다. 디바운싱을 적용하여 타이핑 중 과도한 렌더링을 방지했습니다.
+**Solution**: Loaded Mermaid.js using WKWebView and passed diagram code from Swift through JavaScript bridge for rendering. Applied debouncing to prevent excessive rendering during typing.
 
-### 3. 다중 테마 시스템
-**도전**: 에디터와 프리뷰가 각각 독립적인 테마를 가지면서도 일관된 사용자 경험을 제공해야 했습니다.
+### 3. Multi-Theme System
+**Challenge**: Editor and preview needed independent themes while providing a consistent user experience.
 
-**해결**: 테마 매니저를 분리하여 각 컴포넌트가 독립적으로 테마를 적용받도록 설계하고, UserDefaults를 통해 설정을 영속화했습니다.
-
----
-
-## 역할 및 기여
-
-- macOS 네이티브 마크다운 에디터 아키텍처 설계
-- SwiftUI + AppKit 하이브리드 에디터 UI 구현
-- Mermaid/PlantUML 다이어그램 렌더링 시스템 개발
-- 에디터-프리뷰 스크롤 동기화 알고리즘 구현
-- 테마 시스템 및 사용자 설정 관리 개발
+**Solution**: Separated theme manager so each component applies themes independently, persisting settings through UserDefaults.
 
 ---
 
-## 시스템 요구사항
+## Role & Contributions
 
-| 항목 | 요구사항 |
-|------|---------|
-| **OS** | macOS 13.0 (Ventura) 이상 |
-| **프로세서** | Apple Silicon (M1/M2/M3) 또는 Intel |
-| **빌드 환경** | Xcode 15.0+, macOS 14.0+ |
+- macOS native markdown editor architecture design
+- SwiftUI + AppKit hybrid editor UI implementation
+- Mermaid/PlantUML diagram rendering system development
+- Editor-preview scroll synchronization algorithm implementation
+- Theme system and user settings management development
 
 ---
 
-## 관련 링크
+## System Requirements
+
+| Item | Requirement |
+|------|-------------|
+| **OS** | macOS 13.0 (Ventura) or later |
+| **Processor** | Apple Silicon (M1/M2/M3) or Intel |
+| **Build Environment** | Xcode 15.0+, macOS 14.0+ |
+
+---
+
+## Related Links
 
 - **GitHub**: [leonardo204/MarkdownEditor](https://github.com/leonardo204/MarkdownEditor)
-- **Contact**: zerolive7@gmail.com
 
 ---
 
-*이 프로젝트는 개발자와 기술 문서 작성자를 위한 생산성 도구입니다.*
+*This project is a productivity tool for developers and technical writers.*
