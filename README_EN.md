@@ -79,7 +79,7 @@ Personal macOS/iOS/watchOS app projects.
 
 | Project | Description | Tech | Year | App Store |
 |:--------|:------------|:-----|:----:|:----:|
-| [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar app | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
+| [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar with holidays | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` | 2025 | <a href="https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI-powered lottery number analysis app | `Swift` `SwiftUI` `REST API` | 2025 | <a href="https://apps.apple.com/kr/app/simplesecretrotto/id6740446215"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [zeroPlayer](./projects/zero-player/) | YouTube playlist music player | `Swift` `UIKit` `YoutubeKit` | 2022 | <a href="https://apps.apple.com/kr/app/zeroplayer/id1610259595"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |

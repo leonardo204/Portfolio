@@ -2,12 +2,16 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> macOS 메뉴바 날짜/시간 및 캘린더 앱
+> macOS 메뉴 막대 날짜/시간 및 캘린더 앱
 
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
 ![macOS](https://img.shields.io/badge/macOS-13.0+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
+<a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+</a>
 
 ---
 
@@ -15,7 +19,7 @@
 
 **MiniCalendar**는 macOS 메뉴바에서 날짜와 시간을 사용자 정의 형식으로 표시하고, 클릭 시 깔끔한 미니 캘린더를 제공하는 앱입니다. 기본 시스템 시계의 대안으로, 더 다양한 커스터마이징 옵션과 직관적인 캘린더 탐색 기능을 제공합니다.
 
-macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와 AppKit을 활용하여 네이티브 macOS 경험을 제공합니다.
+공휴일 표시 기능을 통해 한국, 미국, 일본 등 다양한 국가의 공휴일을 확인할 수 있으며, macOS 사용자의 생산성을 높이기 위해 SwiftUI와 AppKit을 활용하여 네이티브 macOS 경험을 제공합니다.
 
 ---
 
@@ -32,6 +36,12 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 - 마우스 휠/트랙패드 스크롤로 월 이동
 - `<<` / `>>` 버튼으로 연도 이동
 - 현재 날짜 강조 표시
+
+### 공휴일 표시 기능
+- **일요일/공휴일 강조**: 일요일과 공휴일을 붉은색으로 표시
+- **공휴일 툴팁**: 마우스 오버 시 공휴일명 표시
+- **다국가 지원**: 한국, 미국, 일본 등 다양한 국가 공휴일 지원
+- **국가 선택**: 설정에서 공휴일 표시 국가 변경 가능
 
 ### 다양한 커스터마이징
 - 날짜 형식 자유롭게 설정 (예: "12월 20일 (금)", "2025-12-20")
@@ -94,8 +104,8 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 │  │  │  ┌──┬──┬──┬──┬──┬──┬──┐               │  │   │
 │  │  │  │Su│Mo│Tu│We│Th│Fr│Sa│               │  │   │
 │  │  │  ├──┼──┼──┼──┼──┼──┼──┤               │  │   │
-│  │  │  │  │  │  │  │  │  │  │               │  │   │
-│  │  │  │  │  │  │23│  │  │  │  ← Today      │  │   │
+│  │  │  │🔴│  │  │  │  │  │  │ ← Holidays    │  │   │
+│  │  │  │  │  │  │25│  │  │  │ ← Christmas   │  │   │
 │  │  │  └──┴──┴──┴──┴──┴──┴──┘               │  │   │
 │  │  └────────────────────────────────────────┘  │   │
 │  └──────────────────────────────────────────────┘   │
@@ -105,6 +115,7 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 │  │  - Time Format (12h/24h)                      │   │
 │  │  - Date Format Pattern                        │   │
 │  │  - Week Start Day                             │   │
+│  │  - Holiday Country Selection                  │   │
 │  │  - Launch at Login                            │   │
 │  └──────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────┘
@@ -134,9 +145,26 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 
 ---
 
+## 시스템 시계 숨기기
+
+MiniCalendar를 시스템 시계 대신 사용하려면:
+
+1. **시스템 설정** → **제어 센터** 열기
+2. **시계** 항목 찾기
+3. **메뉴 막대에서 보기** 끄기
+
+앱 최초 실행 시 안내 팝업이 표시되며, "설정 열기" 버튼으로 바로 이동할 수 있습니다.
+
+---
+
 ## 설치 방법
 
-### DMG 설치 (권장)
+### App Store (권장)
+<a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+</a>
+
+### DMG 설치
 1. [Releases](https://github.com/leonardo204/MiniCalendar/releases) 페이지에서 최신 DMG 다운로드
 2. DMG 파일 열기
 3. MiniCalendar를 Applications 폴더로 드래그
@@ -146,6 +174,9 @@ macOS 사용자의 생산성을 높이기 위해 개발된 이 앱은 SwiftUI와
 # 저장소 클론
 git clone https://github.com/leonardo204/MiniCalendar.git
 cd MiniCalendar
+
+# xcodegen 설치 (필요시)
+brew install xcodegen
 
 # Xcode 프로젝트 생성
 xcodegen generate
@@ -168,7 +199,12 @@ open MiniCalendar.xcodeproj
 
 **해결**: DateFormatter의 포맷 문자열을 직접 사용자가 입력할 수 있도록 하여 최대한의 유연성을 제공했습니다.
 
-### 3. 로그인 시 자동 실행
+### 3. 다국가 공휴일 지원
+**도전**: 여러 국가의 공휴일 정보를 효율적으로 관리하고 표시해야 했습니다.
+
+**해결**: 국가별 공휴일 데이터를 구조화하고, 사용자 설정에 따라 동적으로 공휴일을 로드하여 캘린더에 표시하도록 구현했습니다.
+
+### 4. 로그인 시 자동 실행
 **도전**: macOS의 보안 정책에 맞춰 로그인 시 자동 실행 기능을 구현해야 했습니다.
 
 **해결**: ServiceManagement 프레임워크의 SMAppService를 활용하여 안전하게 로그인 항목을 관리했습니다.
@@ -180,13 +216,16 @@ open MiniCalendar.xcodeproj
 - macOS 네이티브 앱 아키텍처 설계
 - SwiftUI + AppKit 하이브리드 UI 구현
 - 메뉴바 아이템 및 팝오버 시스템 개발
+- 다국가 공휴일 시스템 구현
 - 사용자 설정 저장 및 관리 시스템 구현
 - XcodeGen 기반 프로젝트 구성
+- App Store 배포
 
 ---
 
 ## 관련 링크
 
+- **App Store**: [CalendarMiniBar](https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12)
 - **GitHub**: [leonardo204/MiniCalendar](https://github.com/leonardo204/MiniCalendar)
 - **License**: MIT
 

@@ -9,13 +9,17 @@
 ![macOS](https://img.shields.io/badge/macOS-13.0+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+<a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+</a>
+
 ---
 
 ## Overview
 
 **MiniCalendar** is an app that displays date and time in customizable formats in the macOS menu bar and provides a clean mini calendar on click. As an alternative to the default system clock, it offers more customization options and intuitive calendar navigation.
 
-Developed to enhance macOS user productivity, this app leverages SwiftUI and AppKit to provide a native macOS experience.
+With holiday display feature, you can check holidays from various countries including Korea, USA, and Japan. Developed to enhance macOS user productivity, this app leverages SwiftUI and AppKit to provide a native macOS experience.
 
 ---
 
@@ -32,6 +36,12 @@ Developed to enhance macOS user productivity, this app leverages SwiftUI and App
 - Month navigation via mouse wheel/trackpad scroll
 - Year navigation with `<<` / `>>` buttons
 - Current date highlighting
+
+### Holiday Display Feature
+- **Sunday/Holiday Highlighting**: Display Sundays and holidays in red
+- **Holiday Tooltip**: Show holiday names on mouse hover
+- **Multi-country Support**: Support holidays from Korea, USA, Japan, and more
+- **Country Selection**: Change holiday display country in settings
 
 ### Various Customizations
 - Flexible date format settings (e.g., "Dec 20 (Fri)", "2025-12-20")
@@ -94,8 +104,8 @@ Developed to enhance macOS user productivity, this app leverages SwiftUI and App
 │  │  │  ┌──┬──┬──┬──┬──┬──┬──┐               │  │   │
 │  │  │  │Su│Mo│Tu│We│Th│Fr│Sa│               │  │   │
 │  │  │  ├──┼──┼──┼──┼──┼──┼──┤               │  │   │
-│  │  │  │  │  │  │  │  │  │  │               │  │   │
-│  │  │  │  │  │  │23│  │  │  │  ← Today      │  │   │
+│  │  │  │🔴│  │  │  │  │  │  │ ← Holidays    │  │   │
+│  │  │  │  │  │  │25│  │  │  │ ← Christmas   │  │   │
 │  │  │  └──┴──┴──┴──┴──┴──┴──┘               │  │   │
 │  │  └────────────────────────────────────────┘  │   │
 │  └──────────────────────────────────────────────┘   │
@@ -105,6 +115,7 @@ Developed to enhance macOS user productivity, this app leverages SwiftUI and App
 │  │  - Time Format (12h/24h)                      │   │
 │  │  - Date Format Pattern                        │   │
 │  │  - Week Start Day                             │   │
+│  │  - Holiday Country Selection                  │   │
 │  │  - Launch at Login                            │   │
 │  └──────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────┘
@@ -134,9 +145,26 @@ Supported symbols for custom date formats:
 
 ---
 
+## Hiding System Clock
+
+To use MiniCalendar instead of the system clock:
+
+1. Open **System Settings** → **Control Center**
+2. Find **Clock** section
+3. Turn off **Show in Menu Bar**
+
+A guide popup appears on first launch, with a "Open Settings" button for quick access.
+
+---
+
 ## Installation
 
-### DMG Installation (Recommended)
+### App Store (Recommended)
+<a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+</a>
+
+### DMG Installation
 1. Download the latest DMG from [Releases](https://github.com/leonardo204/MiniCalendar/releases)
 2. Open the DMG file
 3. Drag MiniCalendar to the Applications folder
@@ -146,6 +174,9 @@ Supported symbols for custom date formats:
 # Clone repository
 git clone https://github.com/leonardo204/MiniCalendar.git
 cd MiniCalendar
+
+# Install xcodegen (if needed)
+brew install xcodegen
 
 # Generate Xcode project
 xcodegen generate
@@ -168,7 +199,12 @@ open MiniCalendar.xcodeproj
 
 **Solution**: Allowed users to directly input DateFormatter format strings for maximum flexibility.
 
-### 3. Launch at Login
+### 3. Multi-country Holiday Support
+**Challenge**: Efficiently managing and displaying holiday information for multiple countries.
+
+**Solution**: Structured country-specific holiday data and implemented dynamic holiday loading based on user settings to display on the calendar.
+
+### 4. Launch at Login
 **Challenge**: Implementing launch at login feature in compliance with macOS security policies.
 
 **Solution**: Utilized SMAppService from the ServiceManagement framework to safely manage login items.
@@ -180,13 +216,16 @@ open MiniCalendar.xcodeproj
 - macOS native app architecture design
 - SwiftUI + AppKit hybrid UI implementation
 - Menu bar item and popover system development
+- Multi-country holiday system implementation
 - User settings storage and management system implementation
 - XcodeGen-based project configuration
+- App Store deployment
 
 ---
 
 ## Related Links
 
+- **App Store**: [CalendarMiniBar](https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12)
 - **GitHub**: [leonardo204/MiniCalendar](https://github.com/leonardo204/MiniCalendar)
 - **License**: MIT
 
