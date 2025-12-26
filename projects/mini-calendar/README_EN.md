@@ -53,20 +53,20 @@ With holiday display feature, you can check holidays from various countries incl
 
 ## Screenshots
 
-### Menu Bar & Calendar Popup
-*Check date/time and display calendar from menu bar*
+### Calendar Popup
+*Click to show mini calendar. Sundays and holidays are displayed in red.*
 
-![Calendar Popup](./images/calendar.png)
+![Calendar Popup](./images/screenshot-popup_2880x1800.png)
 
-### Menu Bar Display
-*Display date and time in custom format*
+### Holiday Tooltip
+*Hover over a holiday to see its name.*
 
-![Menu Bar Display](./images/sample1.png)
+![Holiday Tooltip](./images/screenshot-tooltip_2880x1800.png)
 
-### Preferences
-*Various customization options*
+### Settings
+*Various options available.*
 
-![Preferences](./images/sample2-preference.png)
+![Settings](./images/screenshot-preference_2880x1800.png)
 
 ---
 
