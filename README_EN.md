@@ -79,8 +79,8 @@ Personal macOS/iOS/watchOS app projects.
 
 | Project | Description | Tech | Year |
 |:--------|:------------|:-----|:----:|
-| [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar app | `Swift` `SwiftUI` `AppKit` | 2025 |
-| [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` | 2025 |
+| [MiniCalendar](./projects/mini-calendar/) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat-square&logo=app-store&logoColor=white)](https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12) | macOS menu bar calendar app | `Swift` `SwiftUI` `AppKit` | 2025 |
+| [MarkdownEditor](./projects/markdown-editor/) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat-square&logo=app-store&logoColor=white)](https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` | 2025 |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI-powered lottery number analysis app | `Swift` `SwiftUI` `REST API` | 2025 |
 | [zeroPlayer](./projects/zero-player/) | YouTube playlist music player | `Swift` `UIKit` `YoutubeKit` | 2022 |
 | [blackRadio](./projects/black-radio/) | watchOS Korean radio streaming | `Swift` `SwiftUI` `AVFoundation` | 2022 |
