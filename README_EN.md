@@ -35,10 +35,11 @@ Over 10 years of development experience across various platforms, from embedded 
 
 Projects from professional work.
 
-### AI & Voice (2023-2025)
+### AI & Voice (2023-2026)
 
 | Project | Description | Tech |
 |:--------|:------------|:-----|
+| [Figma to Markdown](./projects/figma-to-markdown/) | AI-powered Figma → Markdown conversion plugin | `TypeScript` `React` `Figma API` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | Chat app for AI agent platform integration testing | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A protocol-based multi-agent orchestration | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA Electron](./projects/summa-electron/) | AI-powered real-time meeting minutes generation | `Electron` `React` `Whisper MLX` |

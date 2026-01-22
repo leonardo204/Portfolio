@@ -35,10 +35,11 @@
 
 업무에서 진행한 프로젝트입니다.
 
-### AI & Voice (2023-2025)
+### AI & Voice (2023-2026)
 
 | 프로젝트 | 설명 | 기술 |
 |:--------|:-----|:-----|
+| [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA Electron](./projects/summa-electron/) | AI 기반 실시간 회의록 자동 생성 | `Electron` `React` `Whisper MLX` |
