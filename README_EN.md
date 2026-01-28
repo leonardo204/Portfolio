@@ -42,6 +42,7 @@ Projects from professional work.
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI-powered Figma → Markdown conversion plugin | `TypeScript` `React` `Figma API` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | Chat app for AI agent platform integration testing | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A protocol-based multi-agent orchestration | `Python` `FastAPI` `Azure OpenAI` |
+| [SUMMA v2 (Tauri)](./projects/summa2-tauri/) | Real-time streaming transcription & meeting minutes (v2) | `Tauri` `Rust` `SimulWhisper` |
 | [SUMMA Electron](./projects/summa-electron/) | AI-powered real-time meeting minutes generation | `Electron` `React` `Whisper MLX` |
 | [KT Kiosk Agent](./projects/kt-kiosk-agent/) | KT STT-based Windows kiosk voice agent | `C#` `.NET 6` `gRPC` |
 | [Google Cloud STT Test](./projects/google-cloud-stt/) | Google Cloud STT real-time streaming test | `Node.js` `WebSocket` `Docker` |
@@ -97,9 +98,11 @@ Personal macOS/iOS/watchOS app projects.
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)
+![Tauri](https://img.shields.io/badge/Tauri-24C8D8?style=for-the-badge&logo=tauri&logoColor=white)
 ![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
@@ -123,4 +126,4 @@ Personal macOS/iOS/watchOS app projects.
 
 ---
 
-<sub>Last updated: 2025</sub>
+<sub>Last updated: 2026</sub>

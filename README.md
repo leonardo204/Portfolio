@@ -42,6 +42,7 @@
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
+| [SUMMA v2 (Tauri)](./projects/summa2-tauri/) | 실시간 스트리밍 전사 및 회의록 생성 (v2) | `Tauri` `Rust` `SimulWhisper` |
 | [SUMMA Electron](./projects/summa-electron/) | AI 기반 실시간 회의록 자동 생성 | `Electron` `React` `Whisper MLX` |
 | [KT Kiosk Agent](./projects/kt-kiosk-agent/) | KT STT 기반 Windows 키오스크 음성 에이전트 | `C#` `.NET 6` `gRPC` |
 | [Google Cloud STT Test](./projects/google-cloud-stt/) | Google Cloud STT 실시간 스트리밍 테스트 | `Node.js` `WebSocket` `Docker` |
@@ -97,9 +98,11 @@
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 
 #### Frameworks
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white)
+![Tauri](https://img.shields.io/badge/Tauri-24C8D8?style=for-the-badge&logo=tauri&logoColor=white)
 ![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
@@ -123,4 +126,4 @@
 
 ---
 
-<sub>Last updated: 2025</sub>
+<sub>Last updated: 2026</sub>
