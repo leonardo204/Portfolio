@@ -55,12 +55,12 @@ Projects from professional work.
 | Category | Project | Description | Tech |
 |:---------|:--------|:------------|:-----|
 | **M/W Integration** | [STB M/W Integration & Development](./projects/stb-middleware/) | Cable TV STB middleware development & device integration (30+ projects) | `C` `C++` `Java` |
-| **Cloud UI** | [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
+| &nbsp;&nbsp;└ Cloud UI | [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
 | | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
 | | [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web test client | `JavaScript` `WebSocket` `Canvas` |
-| **Media Player** | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
+| &nbsp;&nbsp;└ Media Player | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
 | | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
-| **Dev Tools** | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
+| &nbsp;&nbsp;└ Dev Tools | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
 | | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
 | | [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI support) | `C` `JNI` `Android NDK` |
 

@@ -55,12 +55,12 @@
 | 분류 | 프로젝트 | 설명 | 기술 |
 |:-----|:--------|:-----|:-----|
 | **M/W 정합** | [STB M/W 정합/개발](./projects/stb-middleware/) | 케이블 TV STB 미들웨어 개발 및 신규 단말 정합 (30여 건) | `C` `C++` `Java` |
-| **Cloud UI** | [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
+| &nbsp;&nbsp;└ Cloud UI | [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
 | | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
 | | [Cloud Client Web](./projects/cloud-client-web/) | 클라우드 이미지 스트리밍 웹 테스트 클라이언트 | `JavaScript` `WebSocket` `Canvas` |
-| **Media Player** | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
+| &nbsp;&nbsp;└ Media Player | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
 | | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV 비디오 플레이어 | `Swift` `AVFoundation` |
-| **Dev Tools** | [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
+| &nbsp;&nbsp;└ Dev Tools | [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
 | | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
 | | [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI 지원) | `C` `JNI` `Android NDK` |
 
