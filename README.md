@@ -50,34 +50,19 @@
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
 
-### Cloud UI (2018-2022)
-
-| 프로젝트 | 설명 | 기술 |
-|:--------|:-----|:-----|
-| [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
-| [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
-| [Cloud Client Web](./projects/cloud-client-web/) | 클라우드 이미지 스트리밍 웹 테스트 클라이언트 | `JavaScript` `WebSocket` `Canvas` |
-
 ### STB Middleware (2012-2022)
 
-| 프로젝트 | 설명 | 기술 |
-|:--------|:-----|:-----|
-| [STB M/W 정합/개발](./projects/stb-middleware/) | 케이블 TV STB 미들웨어 개발 및 신규 단말 정합 (30여 건) | `C` `C++` `Java` |
-
-### Media Player (2021-2022)
-
-| 프로젝트 | 설명 | 기술 |
-|:--------|:-----|:-----|
-| [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
-| [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV 비디오 플레이어 | `Swift` `AVFoundation` |
-
-### Dev Tools & Libraries (~2021)
-
-| 프로젝트 | 설명 | 기술 |
-|:--------|:-----|:-----|
-| [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
-| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
-| [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI 지원) | `C` `JNI` `Android NDK` |
+| 분류 | 프로젝트 | 설명 | 기술 |
+|:-----|:--------|:-----|:-----|
+| **M/W 정합** | [STB M/W 정합/개발](./projects/stb-middleware/) | 케이블 TV STB 미들웨어 개발 및 신규 단말 정합 (30여 건) | `C` `C++` `Java` |
+| **Cloud UI** | [RClient ICS](./projects/rclient-ics/) | 셋톱박스 클라우드 이미지 스트리밍 클라이언트 | `C` `AES` `libpng` |
+| | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS 클라우드 이미지 프레임워크 | `Swift` `WebSocket` |
+| | [Cloud Client Web](./projects/cloud-client-web/) | 클라우드 이미지 스트리밍 웹 테스트 클라이언트 | `JavaScript` `WebSocket` `Canvas` |
+| **Media Player** | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV 비디오 플레이어 | `C#` `.NET` `FFmpeg` |
+| | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV 비디오 플레이어 | `Swift` `AVFoundation` |
+| **Dev Tools** | [MakeReleaseNote](./projects/make-release-note/) | 릴리즈 노트 PDF 자동 생성 도구 | `Java` `Swing` `iText` |
+| | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP 프로토콜 구현 | `Java` `Android` `UDP` |
+| | [JSON Native](./projects/json-native/) | 경량 C JSON 파서 (JNI 지원) | `C` `JNI` `Android NDK` |
 
 ---
 

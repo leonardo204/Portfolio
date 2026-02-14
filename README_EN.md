@@ -50,34 +50,19 @@ Projects from professional work.
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
 
-### Cloud UI (2018-2022)
-
-| Project | Description | Tech |
-|:--------|:------------|:-----|
-| [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
-| [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
-| [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web test client | `JavaScript` `WebSocket` `Canvas` |
-
 ### STB Middleware (2012-2022)
 
-| Project | Description | Tech |
-|:--------|:------------|:-----|
-| [STB M/W Integration & Development](./projects/stb-middleware/) | Cable TV STB middleware development & device integration (30+ projects) | `C` `C++` `Java` |
-
-### Media Player (2021-2022)
-
-| Project | Description | Tech |
-|:--------|:------------|:-----|
-| [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
-| [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
-
-### Dev Tools & Libraries (~2021)
-
-| Project | Description | Tech |
-|:--------|:------------|:-----|
-| [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
-| [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
-| [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI support) | `C` `JNI` `Android NDK` |
+| Category | Project | Description | Tech |
+|:---------|:--------|:------------|:-----|
+| **M/W Integration** | [STB M/W Integration & Development](./projects/stb-middleware/) | Cable TV STB middleware development & device integration (30+ projects) | `C` `C++` `Java` |
+| **Cloud UI** | [RClient ICS](./projects/rclient-ics/) | Set-top box cloud image streaming client | `C` `AES` `libpng` |
+| | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
+| | [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web test client | `JavaScript` `WebSocket` `Canvas` |
+| **Media Player** | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
+| | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
+| **Dev Tools** | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation tool | `Java` `Swing` `iText` |
+| | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol implementation | `Java` `Android` `UDP` |
+| | [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI support) | `C` `JNI` `Android NDK` |
 
 ---
 
