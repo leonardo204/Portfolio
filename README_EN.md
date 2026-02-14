@@ -52,17 +52,17 @@ Projects from professional work.
 
 ### STB Middleware (2012-2022)
 
-| Category | Project | Description | Tech |
-|:---------|:--------|:------------|:-----|
-| **M/W** | [STB M/W Integration](./projects/stb-middleware/) | STB middleware dev · device integration (30+) | `C` `C++` `Java` |
-| &nbsp;└ Cloud | [RClient ICS](./projects/rclient-ics/) | STB cloud image streaming client | `C` `AES` `libpng` |
-| | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
-| | [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web client | `JS` `WebSocket` `Canvas` |
-| &nbsp;└ Player | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
-| | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
-| &nbsp;└ Tools | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation | `Java` `Swing` `iText` |
-| | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol | `Java` `Android` `UDP` |
-| | [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI) | `C` `JNI` `Android NDK` |
+| Category | | Project | Description | Tech |
+|:---------|:--|:--------|:------------|:-----|
+| **M/W** | | [STB M/W Integration](./projects/stb-middleware/) | STB middleware dev · device integration (30+) | `C` `C++` `Java` |
+| | Cloud UI | [RClient ICS](./projects/rclient-ics/) | STB cloud image streaming client | `C` `AES` `libpng` |
+| | 　 | [ImageCloudFramework](./projects/image-cloud-framework/) | iOS cloud image framework | `Swift` `WebSocket` |
+| | 　 | [Cloud Client Web](./projects/cloud-client-web/) | Cloud image streaming web client | `JS` `WebSocket` `Canvas` |
+| | Player | [Tizen Sample Player](./projects/tizen-sample-player/) | Samsung Tizen TV video player | `C#` `.NET` `FFmpeg` |
+| | 　 | [tvOS Player Sample](./projects/tvos-player-sample/) | Apple TV video player | `Swift` `AVFoundation` |
+| | Tools | [MakeReleaseNote](./projects/make-release-note/) | Release note PDF auto-generation | `Java` `Swing` `iText` |
+| | 　 | [Android NAT-PMP](./projects/android-natpmp/) | Android NAT-PMP protocol | `Java` `Android` `UDP` |
+| | 　 | [JSON Native](./projects/json-native/) | Lightweight C JSON parser (JNI) | `C` `JNI` `Android NDK` |
 
 ---
 
