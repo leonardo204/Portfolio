@@ -19,14 +19,14 @@
 - **Target MSOs**: TBroad, Jeju Broadcasting, LGHV, DLive, CCS, KCTV, HCN, JCN, etc.
 - **Scope**: New device integration · UI/UX service development · CAS/XCAS migration · Cloud service deployment
 
-### Industry Context
+### Affiliation & Background
 
-- **Alticast** (est. 1999)
+- **Alticast** (2012-2019)
   - First in the world to commercialize DVB-MHP, OCAP, and ACAP middleware
   - Platform deployed on 50M+ devices across 25+ pay-TV operators globally
   - Full-stack pay-TV software: STB middleware, SDP, UI/UX solutions, CAS/DRM, broadcast systems
-- **Altimedia** (2019~) — Spun off from Alticast, inherited full media platform business (domestic + Europe/Asia clients, Vietnam subsidiary)
-- **KT Altimedia** (2025~) — Rebranded (part of KT Group since 2019)
+- **Altimedia** (2019-2025) — Spun off from Alticast, inherited full media platform business (domestic + Europe/Asia clients, Vietnam subsidiary)
+- **KT Altimedia** (2025-Present) — Rebranded (part of KT Group since 2019)
 
 ### UI/UX Platform Evolution
 
