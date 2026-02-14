@@ -13,15 +13,30 @@
 
 ## Overview
 
-**STB Middleware Integration & Development** encompasses approximately 10 years of cable TV set-top box middleware development and device integration projects starting from 2012.
-
-Over 30 formal projects were delivered across multiple MSOs (Multiple System Operators) — TBroad, Jeju Broadcasting, LGHV, DLive, CCS, KCTV, HCN, JCN — covering new device integration, UI/UX service development, CAS/XCAS migration, and cloud service deployment.
+- **Period**: 2012 - 2022 (~10 years)
+- **Domain**: Cable TV Set-Top Box (STB) middleware development & device integration
+- **Scale**: 30+ formal projects
+- **Target MSOs**: TBroad, Jeju Broadcasting, LGHV, DLive, CCS, KCTV, HCN, JCN, etc.
+- **Scope**: New device integration · UI/UX service development · CAS/XCAS migration · Cloud service deployment
 
 ### Industry Context
 
-These projects were built on solutions from a Korean broadcast middleware specialist. **Alticast** (est. 1999) was first in the world to commercialize DVB-MHP, OCAP, and ACAP middleware, with its software platform deployed on over 50 million devices across 25+ pay-TV operators globally. In 2019, **Altimedia** was spun off to continue the domestic broadcast middleware business, and was renamed to **KT Altimedia** in 2025.
+- **Alticast** (est. 1999)
+  - First in the world to commercialize DVB-MHP, OCAP, and ACAP middleware
+  - Platform deployed on 50M+ devices across 25+ pay-TV operators globally
+  - Full-stack pay-TV software: STB middleware, SDP, UI/UX solutions, CAS/DRM, broadcast systems
+- **Altimedia** (2019~) — Spun off from Alticast, inherited full media platform business (domestic + Europe/Asia clients, Vietnam subsidiary)
+- **KT Altimedia** (2025~) — Rebranded (part of KT Group since 2019)
 
-The UI/UX platform evolved through generations — **Windmill** (interactive client-server system) → **Wind3/Command Cloud** → **Image Cloud** (cloud-rendered UI with lightweight presentation layer on the STB). A core challenge throughout was enabling coexistence of legacy devices and next-generation cloud services at the middleware level.
+### UI/UX Platform Evolution
+
+| Generation | Platform | Approach |
+|:-----------|:---------|:---------|
+| 1st | **Windmill** | Graphics engine enabling 2D/3D high-quality animation on low-spec STBs |
+| 2nd | **Wind3 / Command Cloud** | Cloud command-based UI |
+| 3rd | **Image Cloud** | Cloud rendering + lightweight presentation layer on STB |
+
+> Core challenge: Enabling coexistence of legacy devices and next-gen cloud services at the middleware level
 
 ---
 
@@ -108,10 +123,10 @@ Key responsibilities: M/W module development, new device bring-up, test applicat
 | **UI Engine** | Windmill, Wind3 (Command Cloud), Image Cloud |
 | **Build** | Makefile, Jenkins CI |
 
-> **OCAP** (OpenCable Application Platform) — Java-based cable STB middleware standard defined by CableLabs. Extended from DVB-MHP for North American cable environments.
-> **MHP** (Multimedia Home Platform) — Open middleware standard for interactive digital TV by the DVB Project (ETSI TS 102 796). Provides hardware-independent application runtime on Java VM.
-> **XCAS** (eXchangeable CAS) — Downloadable conditional access system. Korean standard enabling CAS software download and renewal over bidirectional cable networks.
-> **DVB-SI** (Service Information) — Service information standard for DVB bitstreams (ETSI EN 300 468). Supports EPG and automatic receiver tuning.
+- **OCAP** (OpenCable Application Platform) — CableLabs-defined Java-based cable STB middleware standard. Extended from DVB-MHP for North American cable
+- **MHP** (Multimedia Home Platform) — DVB open middleware for interactive digital TV (ETSI TS 102 796). Hardware-independent runtime on Java VM
+- **XCAS** (eXchangeable CAS) — Downloadable conditional access system. CAS S/W download & renewal over bidirectional cable networks (Korean standard)
+- **DVB-SI** (Service Information) — Service information standard for DVB bitstreams (ETSI EN 300 468). EPG and automatic receiver tuning
 
 ---
 
