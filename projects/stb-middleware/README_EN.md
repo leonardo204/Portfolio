@@ -25,8 +25,12 @@
   - First in the world to commercialize DVB-MHP, OCAP, and ACAP middleware
   - Platform deployed on 50M+ devices across 25+ pay-TV operators globally
   - Full-stack pay-TV software: STB middleware, SDP, UI/UX solutions, CAS/DRM, broadcast systems
-- **Altimedia** (2019-2025) — Spun off from Alticast, inherited full media platform business (domestic + Europe/Asia clients, Vietnam subsidiary). Joined KT Group
-- **KT Altimedia** (2025-Present) — Rebranded
+- **Altimedia** (2019-2025)
+  - Spun off from Alticast, inherited full media platform business
+  - Domestic + Europe/Asia clients, Vietnam subsidiary
+  - Joined KT Group
+- **KT Altimedia** (2025-Present)
+  - Rebranded
 
 ### UI/UX Platform Evolution
 
