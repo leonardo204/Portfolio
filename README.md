@@ -72,7 +72,7 @@
 
 | 프로젝트 | 설명 | 기술 | 연도 | App Store |
 |:--------|:-----|:-----|:----:|:----:|
-| [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | - |
+| [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 캘린더 (공휴일 지원) | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 | `Swift` `SwiftUI` `Mermaid` | 2025 | <a href="https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI 기반 로또 번호 분석 앱 | `Swift` `SwiftUI` `REST API` | 2025 | <a href="https://apps.apple.com/kr/app/simplesecretrotto/id6740446215"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |

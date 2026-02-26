@@ -190,6 +190,7 @@ Supports Small / Medium / Lock Screen widgets.
 
 ## Related Links
 
+- **App Store**: [Wandery](https://apps.apple.com/kr/app/wandery/id6759185541)
 - **GitHub**: [leonardo204/Wander](https://github.com/leonardo204/Wander)
 
 ---

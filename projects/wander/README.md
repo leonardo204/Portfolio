@@ -190,6 +190,7 @@ Small / Medium / 잠금화면 위젯을 지원합니다.
 
 ## 관련 링크
 
+- **App Store**: [Wandery](https://apps.apple.com/kr/app/wandery/id6759185541)
 - **GitHub**: [leonardo204/Wander](https://github.com/leonardo204/Wander)
 
 ---
