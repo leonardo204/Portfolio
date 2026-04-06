@@ -39,6 +39,7 @@
 
 | 프로젝트 | 설명 | 기술 |
 |:--------|:-----|:-----|
+| [MyTammi](./projects/mytammi/) | 베트남 TV 미디어 AI 멀티 에이전트 어시스턴트 *(회사 프로젝트)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
@@ -73,6 +74,9 @@
 | 프로젝트 | 설명 | 기술 | 연도 | App Store |
 |:--------|:-----|:-----|:----:|:----:|
 | [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
+| [News Origin](./projects/news-origin/) | 뉴스 기원 추적 및 전파 경로 시각화 | `Python` `React` `BERT` `Azure` | 2025 | - |
+| [BatteryAgent](./projects/battery-agent/) | macOS 메뉴바 배터리 충전 제한 관리 | `Swift` `SwiftUI` `SMC` | 2025 | - |
+| [dotclaude](./projects/dotclaude/) | Claude Code 에이전트 시스템 프레임워크 | `TypeScript` `Node.js` `SQLite` | 2025 | - |
 | [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 캘린더 (공휴일 지원) | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 | `Swift` `SwiftUI` `Mermaid` | 2025 | <a href="https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI 기반 로또 번호 분석 앱 | `Swift` `SwiftUI` `REST API` | 2025 | <a href="https://apps.apple.com/kr/app/simplesecretrotto/id6740446215"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
