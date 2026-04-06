@@ -44,6 +44,9 @@
 - 프로젝트 추가 시 README.md + README_EN.md 동시 업데이트
 - 프로젝트 상세 페이지는 `projects/<name>/` 하위에 한/영 README 쌍으로 생성
 - 테이블 포맷: `| [Name](./projects/name/) | 설명 | \`Tech1\` \`Tech2\` |`
+- 아키텍처/워크플로우 다이어그램은 **Mermaid** 사용 (ASCII art 금지) → [다이어그램 가이드](Ref-docs/diagram-guide.md)
+- 프로젝트 추가/변경 시 메인 README **Tech Stack** 배지도 동기화 확인
+- Side Projects 테이블: `| [Name](./projects/name/) | 설명 | \`Tech\` | 연도 | App Store |`
 
 ---
 
