@@ -38,25 +38,16 @@ It reads previous release note PDFs to automatically parse version information a
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    MakeReleaseNote v1.5                      │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │                   Java Swing UI                         │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │ │
-│  │  │  Site/Model  │  │  Version     │  │  Changelog   │  │ │
-│  │  │  Selection   │  │  Input       │  │  Editor      │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────┘  │ │
-│  └────────────────────────────────────────────────────────┘ │
-│                              │                               │
-│         ┌────────────────────┴────────────────────┐         │
-│         ▼                                         ▼         │
-│  ┌──────────────────┐                 ┌──────────────────┐  │
-│  │   PDF Parser     │                 │   PDF Generator  │  │
-│  │   (iText Read)   │                 │   (iText Write)  │  │
-│  └──────────────────┘                 └──────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph UI["Java Swing UI"]
+        A[Site/Model Selection]
+        B[Version Input]
+        C[Changelog Editor]
+    end
+
+    UI --> D[PDF Parser\niText Read]
+    UI --> E[PDF Generator\niText Write]
 ```
 
 ---

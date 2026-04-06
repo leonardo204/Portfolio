@@ -45,37 +45,28 @@ SimulWhisper + AlignAtt 정책 기반 실시간 스트리밍 전사, CoreML + ML
 
 ## 시스템 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        SUMMA v2 (Tauri)                         │
-│                                                                 │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │              Tauri v2 (Rust Core ~3MB)                  │   │
-│  │  - IPC Commands                                          │   │
-│  │  - Sidecar Manager                                       │   │
-│  │  - Native Menu & Dialogs                                 │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│                              │                                   │
-│         ┌────────────────────┴────────────────────┐             │
-│         ▼                                         ▼             │
-│  ┌──────────────────────┐            ┌──────────────────────┐  │
-│  │   React Frontend     │            │   Python Sidecar     │  │
-│  │   (~5MB)             │            │   (~1.2GB)           │  │
-│  │  ┌────────────────┐  │  WebSocket │  ┌────────────────┐  │  │
-│  │  │  Zustand Store │◄─┼────────────┼─►│  FastAPI       │  │  │
-│  │  │  Components    │  │            │  │  SimulWhisper  │  │  │
-│  │  │  Modals        │  │            │  │  CoreML + MLX  │  │  │
-│  │  └────────────────┘  │            │  └────────────────┘  │  │
-│  └──────────────────────┘            └──────────────────────┘  │
-│                                                │                │
-│                          ┌─────────────────────┴────────────┐  │
-│                          ▼                                  │  │
-│                 ┌──────────────────┐                        │  │
-│                 │  Claude Code /   │                        │  │
-│                 │  OpenAI API      │                        │  │
-│                 │  (회의록 생성)    │                        │  │
-│                 └──────────────────┘                        │  │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph core["Tauri v2 Rust Core (~3MB)"]
+        T[IPC Commands\nSidecar Manager\nNative Menu & Dialogs]
+    end
+
+    subgraph frontend["React Frontend (~5MB)"]
+        F[Zustand Store\nComponents\nModals]
+    end
+
+    subgraph sidecar["Python Sidecar (~1.2GB)"]
+        P[FastAPI\nSimulWhisper\nCoreML + MLX]
+    end
+
+    subgraph ai["AI 회의록 생성"]
+        A[Claude Code CLI\nOpenAI API]
+    end
+
+    T --> F
+    T --> P
+    F <-->|WebSocket| P
+    P --> A
 ```
 
 ---

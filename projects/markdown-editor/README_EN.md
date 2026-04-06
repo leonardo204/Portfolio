@@ -80,42 +80,27 @@ Designed for developers and technical writers, this app significantly enhances p
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      MarkdownEditor App                          │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Document Window                          │ │
-│  │  ┌─────────────────────┬─────────────────────────────────┐ │ │
-│  │  │    Editor Pane      │        Preview Pane             │ │ │
-│  │  │  ┌───────────────┐  │  ┌───────────────────────────┐  │ │ │
-│  │  │  │ # Heading     │  │  │  Heading                  │  │ │ │
-│  │  │  │               │  │  │  ─────────                │  │ │ │
-│  │  │  │ ```mermaid    │◄─┼─►│  ┌─────┐    ┌─────┐      │  │ │ │
-│  │  │  │ graph LR      │  │  │  │  A  │───►│  B  │      │  │ │ │
-│  │  │  │ A --> B       │  │  │  └─────┘    └─────┘      │  │ │ │
-│  │  │  │ ```           │  │  │                           │  │ │ │
-│  │  │  └───────────────┘  │  └───────────────────────────┘  │ │ │
-│  │  │                     │         Synchronized Scroll      │ │ │
-│  │  └─────────────────────┴─────────────────────────────────┘ │ │
-│  │                                                             │ │
-│  │  ┌─────────────────────────────────────────────────────┐   │ │
-│  │  │  Toolbar: [B] [I] [H1] [H2] [Link] [Image] [Code]   │   │ │
-│  │  └─────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Core Components                          │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Markdown    │ │   Mermaid    │ │   Scroll Sync      │  │ │
-│  │  │   Parser     │ │   Renderer   │ │     Manager        │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │   Theme      │ │   File       │ │   Document         │  │ │
-│  │  │   Manager    │ │   Handler    │ │     Manager        │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["MarkdownEditor App"]
+        subgraph DocWindow["Document Window"]
+            EditorPane["Editor Pane\n(Markdown source editing)"]
+            PreviewPane["Preview Pane\n(Rendered output)"]
+            Toolbar["Toolbar: B / I / H1 / H2 / Link / Image / Code"]
+            EditorPane <-->|Synchronized Scroll| PreviewPane
+        end
+
+        subgraph CoreComponents["Core Components"]
+            MP["Markdown Parser"]
+            MR["Mermaid Renderer"]
+            SSM["Scroll Sync Manager"]
+            TM["Theme Manager"]
+            FH["File Handler"]
+            DM["Document Manager"]
+        end
+
+        DocWindow --> CoreComponents
+    end
 ```
 
 ---

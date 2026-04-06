@@ -61,40 +61,31 @@
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                       BatteryAgent App                           │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Menu Bar UI (SwiftUI)                     │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Battery      │ │   Charge     │ │   Settings         │  │ │
-│  │  │  Status       │ │   Limit      │ │   Panel            │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Core Services                            │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Smart        │ │  Calendar    │ │   Temperature      │  │ │
-│  │  │  Charging     │ │  Integration │ │   Monitor          │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Weekly       │ │  AI          │ │   Pattern          │  │ │
-│  │  │  Report       │ │  Analysis    │ │   Learning         │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  System Integration                         │ │
-│  │  ┌─────────────────┐  ┌─────────────────────────────────┐  │ │
-│  │  │  Helper Daemon   │  │  SMC (Charge Control)           │  │ │
-│  │  │  (Privileged)    │──│  Read/Write Battery Registers   │  │ │
-│  │  └─────────────────┘  └─────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph UI["Menu Bar UI (SwiftUI)"]
+        BS[Battery Status]
+        CL[Charge Limit]
+        SP[Settings Panel]
+    end
+
+    subgraph Core["Core Services"]
+        SC[Smart Charging]
+        CI[Calendar Integration]
+        TM[Temperature Monitor]
+        WR[Weekly Report]
+        AI[AI Analysis]
+        PL[Pattern Learning]
+    end
+
+    subgraph System["System Integration"]
+        HD[Helper Daemon<br/>(Privileged)]
+        SMC[SMC Charge Control<br/>Read/Write Battery Registers]
+    end
+
+    UI --> Core
+    Core --> System
+    HD --> SMC
 ```
 
 ---

@@ -40,33 +40,26 @@ It offers essential features for meeting support including real-time voice trans
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                       SUMMA Electron App                         │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Electron Main Process                      │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│         ┌────────────────────┴────────────────────┐             │
-│         ▼                                         ▼             │
-│  ┌──────────────────────┐            ┌──────────────────────┐  │
-│  │   React Frontend     │            │   Python Backend     │  │
-│  │   (react-client/)    │  WebSocket │   (python-server/)   │  │
-│  │  ┌────────────────┐  │            │  ┌────────────────┐  │  │
-│  │  │  Meeting UI    │◄─┼────────────┼─►│  FastAPI       │  │  │
-│  │  │  Settings      │  │            │  │  Whisper MLX   │  │  │
-│  │  │  Transcript    │  │            │  │  AI Gateway    │  │  │
-│  │  └────────────────┘  │            │  └────────────────┘  │  │
-│  └──────────────────────┘            └──────────────────────┘  │
-│                                                │                │
-│                          ┌─────────────────────┼────────────┐  │
-│                          ▼                     ▼            │  │
-│                 ┌──────────────┐      ┌──────────────────┐  │  │
-│                 │    Redis     │      │   Azure OpenAI   │  │  │
-│                 │    Cache     │      │ (Minutes Gen)    │  │  │
-│                 └──────────────┘      └──────────────────┘  │  │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph SUMMA["SUMMA Electron App"]
+        Main["Electron Main Process\n(electron-main/)"]
+
+        subgraph Frontend["React Frontend (react-client/)"]
+            UI["Meeting UI\nSettings\nTranscript"]
+        end
+
+        subgraph Backend["Python Backend (python-server/)"]
+            API["FastAPI\nWhisper MLX\nAI Gateway"]
+        end
+
+        Main --> Frontend
+        Main --> Backend
+        UI <-->|WebSocket| API
+    end
+
+    API --> Redis["Redis Cache"]
+    API --> AzureOAI["Azure OpenAI\n(Minutes Gen)"]
 ```
 
 ---

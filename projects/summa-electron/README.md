@@ -40,34 +40,26 @@
 
 ## 시스템 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                       SUMMA Electron App                         │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Electron Main Process                      │ │
-│  │                    (electron-main/)                         │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│         ┌────────────────────┴────────────────────┐             │
-│         ▼                                         ▼             │
-│  ┌──────────────────────┐            ┌──────────────────────┐  │
-│  │   React Frontend     │            │   Python Backend     │  │
-│  │   (react-client/)    │            │   (python-server/)   │  │
-│  │  ┌────────────────┐  │  WebSocket │  ┌────────────────┐  │  │
-│  │  │  Meeting UI    │◄─┼────────────┼─►│  FastAPI       │  │  │
-│  │  │  Settings      │  │            │  │  Whisper MLX   │  │  │
-│  │  │  Transcript    │  │            │  │  AI Gateway    │  │  │
-│  │  └────────────────┘  │            │  └────────────────┘  │  │
-│  └──────────────────────┘            └──────────────────────┘  │
-│                                                │                │
-│                          ┌─────────────────────┼────────────┐  │
-│                          ▼                     ▼            │  │
-│                 ┌──────────────┐      ┌──────────────────┐  │  │
-│                 │    Redis     │      │   Azure OpenAI   │  │  │
-│                 │    Cache     │      │   (회의록 생성)   │  │  │
-│                 └──────────────┘      └──────────────────┘  │  │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph SUMMA["SUMMA Electron App"]
+        Main["Electron Main Process\n(electron-main/)"]
+
+        subgraph Frontend["React Frontend (react-client/)"]
+            UI["Meeting UI\nSettings\nTranscript"]
+        end
+
+        subgraph Backend["Python Backend (python-server/)"]
+            API["FastAPI\nWhisper MLX\nAI Gateway"]
+        end
+
+        Main --> Frontend
+        Main --> Backend
+        UI <-->|WebSocket| API
+    end
+
+    API --> Redis["Redis Cache"]
+    API --> AzureOAI["Azure OpenAI\n(회의록 생성)"]
 ```
 
 ---

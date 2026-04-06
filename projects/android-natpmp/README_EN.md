@@ -33,25 +33,16 @@ It enables set-top boxes behind NAT gateways (routers) to obtain external IP add
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                 Android Set-top Box                      │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │              NatPmpManager                         │  │
-│  │  ┌─────────────┐  ┌─────────────┐                 │  │
-│  │  │ External IP │  │ Port Mapper │                 │  │
-│  │  │   Request   │  │  (UDP/TCP)  │                 │  │
-│  │  └─────────────┘  └─────────────┘                 │  │
-│  └───────────────────────────────────────────────────┘  │
-│                          │                               │
-│                    NAT-PMP (UDP)                         │
-│                          │                               │
-│                          ▼                               │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │            NAT Gateway (Router)                    │  │
-│  │         External IP: xxx.xxx.xxx.xxx              │  │
-│  └───────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph STB["Android Set-top Box"]
+        subgraph MGR["NatPmpManager"]
+            A[External IP Request]
+            B[Port Mapper\nUDP/TCP]
+        end
+    end
+
+    MGR -->|NAT-PMP UDP| C[NAT Gateway Router\nExternal IP: xxx.xxx.xxx.xxx]
 ```
 
 ---

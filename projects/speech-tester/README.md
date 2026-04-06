@@ -44,35 +44,26 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      Speech Tester App                           │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Web Interface                            │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │   Hotword    │  │     TTS      │  │   Pre-recorded   │  │ │
-│  │  │   Playback   │  │  Generation  │  │     Audio        │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │            Sequential Playback Panel                  │  │ │
-│  │  │     [Hotword] → [Delay] → [TTS/Audio]                │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Flask Backend (Port 5000)                  │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │    Audio     │  │     TTS      │  │     Config       │  │ │
-│  │  │   Manager    │  │   Service    │  │    Manager       │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│                 ┌─────────────────────────┐                     │
-│                 │  Google Cloud TTS API   │                     │
-│                 └─────────────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["Speech Tester App"]
+        subgraph WebUI["Web Interface"]
+            HW["Hotword Playback"]
+            TTS["TTS Generation"]
+            PRE["Pre-recorded Audio"]
+            SEQ["Sequential Playback Panel\nHotword → Delay → TTS/Audio"]
+        end
+
+        subgraph Flask["Flask Backend (Port 5000)"]
+            AM["Audio Manager"]
+            TS["TTS Service"]
+            CM["Config Manager"]
+        end
+
+        WebUI -->|HTTP| Flask
+    end
+
+    TS --> GCPAPI["Google Cloud TTS API"]
 ```
 
 ---

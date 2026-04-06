@@ -58,37 +58,28 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Desktop Application                   │
-│  ┌─────────────────────────────────────────────────┐    │
-│  │              Web UI (Browser View)               │    │
-│  │  ┌─────────────┐  ┌─────────────────────────┐   │    │
-│  │  │   Menu Bar  │  │     Chart Container     │   │    │
-│  │  │  - Open Log │  │  ┌─────────────────────┐│   │    │
-│  │  │  - Export   │  │  │  Timeline Chart     ││   │    │
-│  │  │  - Import   │  │  │  (Chart.js)         ││   │    │
-│  │  │  - Clear    │  │  └─────────────────────┘│   │    │
-│  │  └─────────────┘  │  ┌─────────────────────┐│   │    │
-│  │                   │  │  Threshold Controls ││   │    │
-│  │                   │  └─────────────────────┘│   │    │
-│  │                   └─────────────────────────────┘│   │
-│  └─────────────────────────────────────────────────┘    │
-│                           │                              │
-│  ┌─────────────────────────────────────────────────┐    │
-│  │              Node.js Backend Server              │    │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────┐  │    │
-│  │  │ ADB Handler │  │ Log Parser  │  │WebSocket│  │    │
-│  │  └─────────────┘  └─────────────┘  └─────────┘  │    │
-│  └─────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │    Android Device       │
-              │  (AI Agent Running)     │
-              │    via ADB logcat       │
-              └─────────────────────────┘
+```mermaid
+graph TD
+    subgraph app["데스크톱 애플리케이션 (Electron)"]
+        subgraph ui["Web UI (Browser View)"]
+            M[메뉴 바\nOpen Log / Export / Import / Clear]
+            C[차트 컨테이너\n타임라인 차트 - Chart.js\nThreshold Controls]
+        end
+
+        subgraph backend["Node.js 백엔드 서버"]
+            ADB[ADB Handler]
+            LP[Log Parser]
+            WS[WebSocket]
+        end
+    end
+
+    D[Android Device\nAI Agent 실행\nvia ADB logcat]
+
+    M --> C
+    WS --> C
+    ADB --> LP
+    LP --> WS
+    D -->|ADB logcat| ADB
 ```
 
 ---

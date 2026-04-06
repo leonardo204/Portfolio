@@ -84,41 +84,25 @@ With holiday display feature, you can check holidays from various countries incl
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────┐
-│                 MiniCalendar App                     │
-│                                                      │
-│  ┌──────────────────────────────────────────────┐   │
-│  │              Menu Bar Item                    │   │
-│  │  ┌────────────────────────────────────────┐  │   │
-│  │  │  Date/Time Display (Customizable)      │  │   │
-│  │  │  "Dec 23 (Mon) 11:24"                  │  │   │
-│  │  └────────────────────────────────────────┘  │   │
-│  └──────────────────────────────────────────────┘   │
-│                        │ Click                       │
-│                        ▼                             │
-│  ┌──────────────────────────────────────────────┐   │
-│  │           Calendar Popover (SwiftUI)          │   │
-│  │  ┌────────────────────────────────────────┐  │   │
-│  │  │  << December 2025 >>                   │  │   │
-│  │  │  ┌──┬──┬──┬──┬──┬──┬──┐               │  │   │
-│  │  │  │Su│Mo│Tu│We│Th│Fr│Sa│               │  │   │
-│  │  │  ├──┼──┼──┼──┼──┼──┼──┤               │  │   │
-│  │  │  │🔴│  │  │  │  │  │  │ ← Holidays    │  │   │
-│  │  │  │  │  │  │25│  │  │  │ ← Christmas   │  │   │
-│  │  │  └──┴──┴──┴──┴──┴──┴──┘               │  │   │
-│  │  └────────────────────────────────────────┘  │   │
-│  └──────────────────────────────────────────────┘   │
-│                                                      │
-│  ┌──────────────────────────────────────────────┐   │
-│  │          Preferences Window                   │   │
-│  │  - Time Format (12h/24h)                      │   │
-│  │  - Date Format Pattern                        │   │
-│  │  - Week Start Day                             │   │
-│  │  - Holiday Country Selection                  │   │
-│  │  - Launch at Login                            │   │
-│  └──────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph MB["Menu Bar Item"]
+        A["Date/Time Display (Customizable)\ne.g. Dec 23 (Mon) 11:24"]
+    end
+
+    A -->|Click| B
+
+    subgraph POP["Calendar Popover (SwiftUI)"]
+        B[Monthly Calendar View\nWith Holiday Indicators]
+    end
+
+    subgraph PREF["Preferences Window"]
+        C[Time Format 12h/24h]
+        D[Date Format Pattern]
+        E[Week Start Day]
+        F[Holiday Country Selection]
+        G[Launch at Login]
+    end
 ```
 
 ---

@@ -59,40 +59,32 @@
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Figma to Markdown Plugin                      │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                      Plugin UI (React)                      │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Frame       │ │   Settings   │ │   Token Usage      │  │ │
-│  │  │  Selector    │ │   Panel      │ │   Monitor          │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Core Processing                          │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Frame       │ │   LLM        │ │   Markdown         │  │ │
-│  │  │  Parser      │ │   Provider   │ │   Generator        │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Mermaid     │ │   Rate       │ │   Multi-Frame      │  │ │
-│  │  │  Generator   │ │   Limiter    │ │   Merger           │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   LLM Providers                             │ │
-│  │  ┌─────────┐ ┌─────────┐ ┌─────────────┐ ┌──────────────┐  │ │
-│  │  │ OpenAI  │ │ Claude  │ │ Azure OpenAI│ │   Ollama     │  │ │
-│  │  │   API   │ │   API   │ │     API     │ │   (Local)    │  │ │
-│  │  └─────────┘ └─────────┘ └─────────────┘ └──────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph UI["Plugin UI (React)"]
+        A[Frame Selector]
+        B[Settings Panel]
+        C[Token Usage Monitor]
+    end
+
+    subgraph Core["Core Processing"]
+        D[Frame Parser]
+        E[LLM Provider]
+        F[Markdown Generator]
+        G[Mermaid Generator]
+        H[Rate Limiter]
+        I[Multi-Frame Merger]
+    end
+
+    subgraph Providers["LLM Providers"]
+        J[OpenAI API]
+        K[Claude API]
+        L[Azure OpenAI API]
+        M[Ollama Local]
+    end
+
+    UI --> Core
+    Core --> Providers
 ```
 
 ---

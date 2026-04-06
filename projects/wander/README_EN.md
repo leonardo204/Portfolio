@@ -106,47 +106,47 @@ Supports Small / Medium / Lock Screen widgets.
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                     Wandery App                          │
-│                                                          │
-│  ┌───────────────┐  ┌───────────────┐  ┌─────────────┐ │
-│  │   Photo Pick   │  │  Quick Snap   │  │   Widget    │ │
-│  │  (PhotoKit)    │  │  (Camera)     │  │ (WidgetKit) │ │
-│  └───────┬───────┘  └───────┬───────┘  └─────────────┘ │
-│          │                  │                            │
-│          ▼                  ▼                            │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │              Analysis Pipeline                    │   │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────────────┐ │   │
-│  │  │  EXIF    │ │  DBSCAN  │ │  H3 Hexagon     │ │   │
-│  │  │  Parser  │ │ Cluster  │ │  Grid Indexing  │ │   │
-│  │  └────┬─────┘ └────┬─────┘ └────────┬─────────┘ │   │
-│  │       └─────────────┼───────────────┘            │   │
-│  │                     ▼                             │   │
-│  │  ┌──────────────────────────────────────────┐    │   │
-│  │  │         Wander Intelligence              │    │   │
-│  │  │  Vision Scene · Travel DNA · Context     │    │   │
-│  │  │  Insights · Place Learning · Revisit     │    │   │
-│  │  └──────────────────┬───────────────────────┘    │   │
-│  └─────────────────────┼────────────────────────────┘   │
-│                        ▼                                 │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │              AI Polish (Gemini)                   │   │
-│  │  Title · Story · Insights · Travel DNA            │   │
-│  └──────────────────────────────────────────────────┘   │
-│                        │                                 │
-│          ┌─────────────┼─────────────┐                  │
-│          ▼             ▼             ▼                  │
-│  ┌────────────┐ ┌────────────┐ ┌──────────────┐        │
-│  │  Timeline  │ │  Map View  │ │  Share Card  │        │
-│  │  (SwiftUI) │ │  (MapKit)  │ │  (CloudKit)  │        │
-│  └────────────┘ └────────────┘ └──────────────┘        │
-│                                                          │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │              SwiftData Storage                    │   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph input["Input Layer"]
+        A[Photo Pick\nPhotoKit]
+        B[Quick Snap\nCamera]
+        C[Widget\nWidgetKit]
+    end
+
+    subgraph pipeline["Analysis Pipeline"]
+        D[EXIF Parser]
+        E[DBSCAN Cluster]
+        F[H3 Hexagon\nGrid Indexing]
+        G[Wander Intelligence\nVision Scene · Travel DNA · Context\nInsights · Place Learning · Revisit]
+    end
+
+    subgraph ai["AI Layer"]
+        H[AI Polish - Gemini\nTitle · Story · Insights · Travel DNA]
+    end
+
+    subgraph output["Output Layer"]
+        I[Timeline\nSwiftUI]
+        J[Map View\nMapKit]
+        K[Share Card\nCloudKit]
+    end
+
+    subgraph storage["Storage"]
+        L[SwiftData Storage]
+    end
+
+    A --> D
+    B --> D
+    D --> G
+    E --> G
+    F --> G
+    G --> H
+    H --> I
+    H --> J
+    H --> K
+    I --> L
+    J --> L
+    K --> L
 ```
 
 ---

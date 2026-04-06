@@ -60,40 +60,31 @@
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        News Origin                               │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Frontend (React/TypeScript)               │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Search      │ │  Timeline    │ │   Trend            │  │ │
-│  │  │  Interface   │ │  Viewer      │ │   Dashboard        │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Backend (Python)                          │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  2-Stage     │ │  BERT NER    │ │   Azure            │  │ │
-│  │  │  Tracker     │ │  Extractor   │ │   Embeddings       │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  RSS         │ │  Vector      │ │   Timeline         │  │ │
-│  │  │  Crawler     │ │  Search      │ │   Generator        │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Data Layer                                │ │
-│  │  ┌─────────────┐ ┌──────────────┐ ┌─────────────────────┐  │ │
-│  │  │  Vector DB  │ │ Relational   │ │  Google News RSS    │  │ │
-│  │  │ (Embeddings)│ │     DB       │ │     Feed            │  │ │
-│  │  └─────────────┘ └──────────────┘ └─────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Frontend["Frontend (React/TypeScript)"]
+        SI[Search Interface]
+        TV[Timeline Viewer]
+        TD[Trend Dashboard]
+    end
+
+    subgraph Backend["Backend (Python)"]
+        ST[2-Stage Tracker]
+        BE[BERT NER Extractor]
+        AE[Azure Embeddings]
+        RC[RSS Crawler]
+        VS[Vector Search]
+        TG[Timeline Generator]
+    end
+
+    subgraph DataLayer["Data Layer"]
+        VDB[Vector DB<br/>(Embeddings)]
+        RDB[Relational DB]
+        RSS[Google News<br/>RSS Feed]
+    end
+
+    Frontend --> Backend
+    Backend --> DataLayer
 ```
 
 ---

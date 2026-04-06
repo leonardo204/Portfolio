@@ -43,50 +43,32 @@ It handles complex user requests through collaboration between multiple agents, 
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    A2A Multi-Agent System                        │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Client Layer                             │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │                   client.py                           │  │ │
-│  │  │              (User Request Interface)                 │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │              Main Agent (Port 18000)                        │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐    │ │
-│  │  │  Registry    │ │   Intent     │ │   Orchestration  │    │ │
-│  │  │  Manager     │ │   Analyzer   │ │     Engine       │    │ │
-│  │  └──────────────┘ └──────────────┘ └──────────────────┘    │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              Context Manager                          │  │ │
-│  │  │       (Session-based Information Sharing)             │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│              ┌───────────────┴───────────────┐                  │
-│              ▼                               ▼                  │
-│  ┌─────────────────────┐       ┌─────────────────────┐         │
-│  │  Weather Agent      │       │    TV Agent         │         │
-│  │  (Port 18001)       │       │   (Port 18002)      │         │
-│  │  ┌───────────────┐  │       │  ┌───────────────┐  │         │
-│  │  │ Weather Info  │  │       │  │ TV Control    │  │         │
-│  │  │ Forecasting   │  │       │  │ Channel Change│  │         │
-│  │  └───────────────┘  │       │  └───────────────┘  │         │
-│  └─────────────────────┘       └─────────────────────┘         │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    LLM Layer                                │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │                 Azure OpenAI                          │  │ │
-│  │  │          (Intent Analysis & Response Generation)      │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph ClientLayer["Client Layer"]
+        Client["client.py\n(User Request Interface)"]
+    end
+
+    subgraph MainAgent["Main Agent (Port 18000)"]
+        RM["Registry Manager"]
+        IA["Intent Analyzer"]
+        OE["Orchestration Engine"]
+        CTX["Context Manager\n(Session-based Information Sharing)"]
+    end
+
+    subgraph ServiceAgents["Service Agents"]
+        WA["Weather Agent\n(Port 18001)\nWeather Info / Forecasting"]
+        TV["TV Agent\n(Port 18002)\nTV Control / Channel Change"]
+    end
+
+    subgraph LLMLayer["LLM Layer"]
+        AzureOAI["Azure OpenAI\n(Intent Analysis & Response Generation)"]
+    end
+
+    Client --> MainAgent
+    MainAgent --> WA
+    MainAgent --> TV
+    OE --> AzureOAI
 ```
 
 ---
