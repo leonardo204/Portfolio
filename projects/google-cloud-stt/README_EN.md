@@ -44,37 +44,24 @@ It also serves as a reference implementation for speech recognition in STB (Set-
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   Google Cloud STT Test App                      │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Web Client (Browser)                     │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │   Audio      │  │   WebSocket  │  │    UI/Canvas     │  │ │
-│  │  │   Capture    │  │   Client     │  │   Visualizer     │  │ │
-│  │  │  (16kHz)     │  │              │  │                  │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                         WebSocket                                │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Node.js Backend Server                     │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │  WebSocket   │  │  Recognition │  │   Config         │  │ │
-│  │  │   Server     │  │   Session    │  │   Builder        │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                           gRPC                                   │
-│                              │                                   │
-│                              ▼                                   │
-│                 ┌─────────────────────────┐                     │
-│                 │  Google Cloud STT API   │                     │
-│                 │   (Streaming gRPC)      │                     │
-│                 └─────────────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph CLIENT["Web Client (Browser)"]
+        AudioCapture["Audio Capture (16kHz)"]
+        WSClient[WebSocket Client]
+        Visualizer[UI/Canvas Visualizer]
+    end
+
+    subgraph BACKEND["Node.js Backend Server"]
+        WSServer[WebSocket Server]
+        RecogSession[Recognition Session]
+        ConfigBuilder[Config Builder]
+    end
+
+    GCPSTT["Google Cloud STT API\n(Streaming gRPC)"]
+
+    CLIENT -->|WebSocket| BACKEND
+    BACKEND -->|gRPC| GCPSTT
 ```
 
 ---

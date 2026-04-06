@@ -2,7 +2,7 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> Claude Code를 더 똑똑하게 — Enhanced Claude Code Agent System
+> Claude Code를 더 똑똑하게 — Claude Code Agent Harness
 
 ![Platform](https://img.shields.io/badge/platform-Claude%20Code-7C3AED)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)
@@ -13,7 +13,7 @@
 
 ## 개요
 
-**dotclaude**는 Claude Code의 에이전트 시스템을 강화하는 프레임워크입니다. 7개의 전문 에이전트 파이프라인, SQLite 기반 세션 간 컨텍스트 보존, 실시간 HUD 대시보드, Telegram 알림 등을 통해 Claude Code를 보다 체계적이고 지능적으로 활용할 수 있도록 지원합니다. 단일 명령어(`/dotclaude-init`)로 모든 환경을 즉시 구성할 수 있습니다.
+**dotclaude**는 Claude Code 기반 에이전트 하네스입니다. 7개의 전문 에이전트 파이프라인, SQLite 기반 세션 간 컨텍스트 보존, 실시간 HUD 대시보드, Telegram 알림 등을 통해 Claude Code를 보다 체계적이고 지능적으로 활용할 수 있도록 지원합니다. 단일 명령어(`/dotclaude-init`)로 모든 환경을 즉시 구성할 수 있습니다.
 
 ---
 
@@ -75,45 +75,35 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     dotclaude Framework                          │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Agent Pipeline                            │ │
-│  │  ┌──────────┐ ┌───────────┐ ┌──────────┐ ┌─────────────┐  │ │
-│  │  │ Planner  │→│ Architect │→│  Ralph   │→│ Test        │  │ │
-│  │  │          │ │           │ │(Implmtr) │ │ Engineer    │  │ │
-│  │  └──────────┘ └───────────┘ └──────────┘ └─────────────┘  │ │
-│  │                                    │                        │ │
-│  │                                    ▼                        │ │
-│  │  ┌──────────┐ ┌───────────┐ ┌──────────┐                  │ │
-│  │  │ Debugger │ │ Reviewer  │←│ Verifier │                  │ │
-│  │  │          │ │           │ │          │                  │ │
-│  │  └──────────┘ └───────────┘ └──────────┘                  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Core Infrastructure                        │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Context DB  │ │   HUD        │ │   Hook System      │  │ │
-│  │  │  (SQLite)    │ │   Dashboard  │ │   (5 Scripts)      │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Context     │ │  Telegram    │ │   Session          │  │ │
-│  │  │  Monitor     │ │  Messenger   │ │   Manager          │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Claude Code CLI                          │ │
-│  │  ┌─────────────────────────────────────────────────────┐   │ │
-│  │  │  CLAUDE.md  ←→  .claude/agents/  ←→  .claude/db/   │   │ │
-│  │  └─────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Pipeline[Agent Pipeline]
+        P[Planner] --> A[Architect]
+        A --> R[Ralph<br/>Implementer]
+        A --> T[Test Engineer]
+        R --> V[Verifier]
+        T --> V
+        V --> Rev[Reviewer]
+        D[Debugger] -.->|에러 시| R
+    end
+
+    subgraph Infra[Core Infrastructure]
+        DB[(Context DB<br/>SQLite)]
+        HUD[HUD Dashboard]
+        Hook[Hook System<br/>5 Scripts]
+        Mon[Context Monitor]
+        Tele[Telegram Messenger]
+        Sess[Session Manager]
+    end
+
+    Pipeline --> Infra
+
+    subgraph CLI[Claude Code CLI]
+        MD[CLAUDE.md] <--> Agents[.claude/agents/]
+        Agents <--> Store[.claude/db/]
+    end
+
+    Infra --> CLI
 ```
 
 ---
@@ -155,4 +145,4 @@
 
 ---
 
-*이 프로젝트는 Claude Code의 에이전트 시스템을 강화하여 보다 체계적이고 지능적인 AI 개발 환경을 제공합니다.*
+*이 프로젝트는 Claude Code 기반 에이전트 하네스로, 보다 체계적이고 지능적인 AI 개발 환경을 제공합니다.*

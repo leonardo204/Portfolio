@@ -80,36 +80,46 @@
 
 General layer structure of OCAP-based cable STB software.
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                    Java Applications                          │
-│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────────┐ │
-│  │  EPG   │ │  VOD   │ │  Push  │ │ Market │ │  Test App  │ │
-│  └────────┘ └────────┘ └────────┘ └────────┘ └────────────┘ │
-├──────────────────────────────────────────────────────────────┤
-│                 Middleware (OCAP / MHP)              ◀ My Role │
-│  ┌──────────────────────────────────────────────────────┐    │
-│  │  Core Modules                                        │    │
-│  │  ┌──────────┐ ┌──────────┐ ┌────────┐ ┌───────────┐ │    │
-│  │  │ Windmill │ │  Wind3   │ │ Image  │ │ CAS/XCAS  │ │    │
-│  │  │  (UI)    │ │(CloudUI) │ │ Cloud  │ │  Module   │ │    │
-│  │  └──────────┘ └──────────┘ └────────┘ └───────────┘ │    │
-│  │  ┌──────────┐ ┌──────────┐ ┌────────┐ ┌───────────┐ │    │
-│  │  │  DVB-SI  │ │ Channel  │ │ Tuner  │ │  Network  │ │    │
-│  │  │  Parser  │ │ Manager  │ │ Control│ │  Manager  │ │    │
-│  │  └──────────┘ └──────────┘ └────────┘ └───────────┘ │    │
-│  └──────────────────────────────────────────────────────┘    │
-├──────────────────────────────────────────────────────────────┤
-│                    Porting Layer (PL)                          │
-├──────────────────────────────────────────────────────────────┤
-│                   Manufacturer SDK                            │
-│         (Humax / Samsung / LG / MIRAE / ...)                 │
-├──────────────────────────────────────────────────────────────┤
-│                      Drivers                                  │
-├──────────────────────────────────────────────────────────────┤
-│                      Hardware                                 │
-│         (SoC, Tuner, HDMI, RF, Smartcard, ...)               │
-└──────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph APP["Java Applications"]
+        EPG[EPG]
+        VOD[VOD]
+        Push[Push]
+        Market[Market]
+        TestApp[Test App]
+    end
+
+    subgraph MW["Middleware (OCAP / MHP) ◀ My Role"]
+        subgraph CORE["Core Modules"]
+            Windmill["Windmill (UI)"]
+            Wind3["Wind3 (CloudUI)"]
+            ImageCloud[Image Cloud]
+            CAS[CAS/XCAS Module]
+            DVBSI[DVB-SI Parser]
+            ChMgr[Channel Manager]
+            Tuner[Tuner Control]
+            NetMgr[Network Manager]
+        end
+    end
+
+    PL["Porting Layer (PL)"]
+
+    subgraph SDK["Manufacturer SDK"]
+        MFR["Humax / Samsung / LG / MIRAE / ..."]
+    end
+
+    DRV[Drivers]
+
+    subgraph HW["Hardware"]
+        HWCOMP["SoC, Tuner, HDMI, RF, Smartcard, ..."]
+    end
+
+    APP --> MW
+    MW --> PL
+    PL --> SDK
+    SDK --> DRV
+    DRV --> HW
 ```
 
 Key responsibilities: M/W module development, new device bring-up, test application development, integration guides, proactive issue identification & resolution

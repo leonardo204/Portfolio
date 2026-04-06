@@ -61,30 +61,21 @@ It supports 19 intent categories and provides dynamic model switching and real-t
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   Intent Classifier Chat App                     │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Electron Main Process                      │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              Express Server (Port 13240)              │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌────────────────┐  │  │ │
-│  │  │  │  Intent    │  │   Model    │  │    Prompt      │  │  │ │
-│  │  │  │  Classifier│  │   Manager  │  │    Config      │  │  │ │
-│  │  │  └────────────┘  └────────────┘  └────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  │                           │                                 │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │                BrowserWindow (Chat UI)                │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│                 ┌─────────────────────────┐                     │
-│                 │      vLLM API Server    │                     │
-│                 └─────────────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["Intent Classifier Chat App"]
+        subgraph Main["Electron Main Process"]
+            subgraph Server["Express Server (Port 13240)"]
+                IC[Intent Classifier]
+                MM[Model Manager]
+                PC[Prompt Config]
+            end
+            BW[BrowserWindow - Chat UI]
+        end
+    end
+
+    Server --> BW
+    App --> vLLM[vLLM API Server]
 ```
 
 ---

@@ -85,51 +85,36 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                 VTT Media AI Agent Chat App                      │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │              Electron Main Process                          │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              Express Server (Port 18230)              │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌────────────────┐  │  │ │
-│  │  │  │ API Proxy  │  │  Static    │  │   Session      │  │  │ │
-│  │  │  │            │  │  Files     │  │   Manager      │  │  │ │
-│  │  │  └────────────┘  └────────────┘  └────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  │                           │                                 │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              BrowserWindow (Renderer)                 │  │ │
-│  │  │  ┌────────────────────────────────────────────────┐  │  │ │
-│  │  │  │              Chat Interface                     │  │  │ │
-│  │  │  │  ┌──────────┐  ┌──────────┐  ┌──────────────┐  │  │  │ │
-│  │  │  │  │ Message  │  │Suggestion│  │   Content    │  │  │  │ │
-│  │  │  │  │  List    │  │  Chips   │  │   Grid       │  │  │  │ │
-│  │  │  │  └──────────┘  └──────────┘  └──────────────┘  │  │  │ │
-│  │  │  └────────────────────────────────────────────────┘  │  │ │
-│  │  │  ┌────────────────────────────────────────────────┐  │  │ │
-│  │  │  │              Response Detail Panel              │  │  │ │
-│  │  │  │  Intent | Entity | Trace | JSON Viewer         │  │  │ │
-│  │  │  └────────────────────────────────────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Backend Services                         │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │    agentApi  │  │  session     │  │   suggestion     │  │ │
-│  │  │              │  │  Manager     │  │   Manager        │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │  Media AI Agent Platform │
-                 │      (External API)      │
-                 └─────────────────────────┘
+```mermaid
+graph TD
+    subgraph ELECTRON["Electron Main Process"]
+        subgraph EXPRESS["Express 서버 (Port 18230)"]
+            APIProxy[API Proxy]
+            StaticFiles[Static Files]
+            SessionMgr[Session Manager]
+        end
+
+        subgraph RENDERER["BrowserWindow (Renderer)"]
+            subgraph CHAT["Chat Interface"]
+                MsgList[메시지 목록]
+                SuggChips[Suggestion Chips]
+                ContentGrid[Content Grid]
+            end
+            DetailPanel["Response Detail Panel\nIntent | Entity | Trace | JSON Viewer"]
+        end
+    end
+
+    subgraph BACKEND_SVC["Backend Services"]
+        AgentApi[agentApi]
+        SessMgr[sessionManager]
+        SuggMgr[suggestionManager]
+    end
+
+    EXT(["Media AI Agent Platform\n(External API)"])
+
+    EXPRESS --> RENDERER
+    ELECTRON --> BACKEND_SVC
+    BACKEND_SVC -->|HTTP/HTTPS| EXT
 ```
 
 ---

@@ -44,37 +44,24 @@ Android TV 통합 가이드를 포함하여 STB(Set-Top Box) 환경에서의 음
 
 ## 시스템 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   Google Cloud STT Test App                      │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Web Client (Browser)                     │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │   Audio      │  │   WebSocket  │  │    UI/Canvas     │  │ │
-│  │  │   Capture    │  │   Client     │  │   Visualizer     │  │ │
-│  │  │  (16kHz)     │  │              │  │                  │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                         WebSocket                                │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Node.js Backend Server                     │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │  WebSocket   │  │  Recognition │  │   Config         │  │ │
-│  │  │   Server     │  │   Session    │  │   Builder        │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                           gRPC                                   │
-│                              │                                   │
-│                              ▼                                   │
-│                 ┌─────────────────────────┐                     │
-│                 │  Google Cloud STT API   │                     │
-│                 │   (Streaming gRPC)      │                     │
-│                 └─────────────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph CLIENT["Web Client (Browser)"]
+        AudioCapture["오디오 캡처 (16kHz)"]
+        WSClient[WebSocket 클라이언트]
+        Visualizer[UI/Canvas 시각화]
+    end
+
+    subgraph BACKEND["Node.js 백엔드 서버"]
+        WSServer[WebSocket 서버]
+        RecogSession[Recognition Session]
+        ConfigBuilder[Config Builder]
+    end
+
+    GCPSTT["Google Cloud STT API\n(Streaming gRPC)"]
+
+    CLIENT -->|WebSocket| BACKEND
+    BACKEND -->|gRPC| GCPSTT
 ```
 
 ---

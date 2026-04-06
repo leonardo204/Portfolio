@@ -39,21 +39,19 @@ It receives real-time image frames from the server via WebSocket and renders the
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Cloud Client Web                          │
-│                                                              │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │  WebSocket  │  │ Web Worker  │  │      Canvas         │  │
-│  │  Handler    │──│ (Parser)    │──│      Renderer       │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
-│         │                                    │               │
-│         ▼                                    ▼               │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                   ByteBuffer Parser                      ││
-│  │              (Binary Frame Decoding)                     ││
-│  └─────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph CCW["Cloud Client Web"]
+        WH["WebSocket Handler"]
+        WW["Web Worker\n(Parser)"]
+        CR["Canvas Renderer"]
+        BP["ByteBuffer Parser\n(Binary Frame Decoding)"]
+
+        WH --> WW
+        WW --> CR
+        WH --> BP
+        CR --> BP
+    end
 ```
 
 ---

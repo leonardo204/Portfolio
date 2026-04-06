@@ -40,33 +40,22 @@ It supports sprite animation-based visual feedback, host application integration
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      KT Kiosk Agent System                       │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Main Application                         │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │  MainForm    │  │ GraphicForm  │  │   IpcManager     │  │ │
-│  │  │  (Control)   │  │ (Animation)  │  │   (Windows Msg)  │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  │                                                             │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │                   Core Modules                        │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌────────────────┐  │  │ │
-│  │  │  │  Sprite    │  │   Audio    │  │    Session     │  │  │ │
-│  │  │  │  Animation │  │  Capture   │  │    Manager     │  │  │ │
-│  │  │  └────────────┘  └────────────┘  └────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│              ┌───────────────┴───────────────┐                  │
-│              ▼                               ▼                  │
-│  ┌─────────────────────┐       ┌─────────────────────┐         │
-│  │     KT STT API      │       │    Host Kiosk App   │         │
-│  │  (gRPC Streaming)   │       │   (IPC WM_COPYDATA) │         │
-│  └─────────────────────┘       └─────────────────────┘         │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph APP["Main Application"]
+        MF["MainForm\n(Control)"]
+        GF["GraphicForm\n(Animation)"]
+        IPC["IpcManager\n(Windows Msg)"]
+
+        subgraph CORE["Core Modules"]
+            SA["Sprite Animation Item"]
+            AC["Audio Capture\n(NAudio)"]
+            SM["Session Manager"]
+        end
+    end
+
+    APP --> STT["KT STT API\n(gRPC Streaming)"]
+    APP --> HOST["Host Kiosk App\n(IPC WM_COPYDATA)"]
 ```
 
 ---

@@ -33,27 +33,18 @@ It supports real-time image frame reception and rendering via WebSocket, develop
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                 ImageCloudFramework                      │
-│                                                          │
-│  ┌────────────────┐  ┌────────────────┐                 │
-│  │   WebSocket    │  │     Frame      │                 │
-│  │    Client      │──│    Handler     │                 │
-│  └────────────────┘  └────────────────┘                 │
-│           │                   │                          │
-│           ▼                   ▼                          │
-│  ┌────────────────────────────────────────────────────┐ │
-│  │              Image Renderer                         │ │
-│  └────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────┘
-                          │
-                     WebSocket
-                          │
-                          ▼
-              ┌───────────────────────┐
-              │   Cloud Image Server  │
-              └───────────────────────┘
+```mermaid
+graph TD
+    subgraph ICF["ImageCloudFramework"]
+        WC["WebSocket Client"]
+        FH["Frame Handler"]
+        IR["Image Renderer"]
+        WC --> FH
+        WC --> IR
+        FH --> IR
+    end
+
+    ICF -- WebSocket --> CIS["Cloud Image Server"]
 ```
 
 ---

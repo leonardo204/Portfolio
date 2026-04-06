@@ -71,51 +71,38 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                       zeroPlayer App                             │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Main View Controller                      │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              Music Player Interface                   │  │ │
-│  │  │  ┌────────────┐  ┌─────────────────────────────────┐ │  │ │
-│  │  │  │  Artwork   │  │  Track Info (MarqueeLabel)      │ │  │ │
-│  │  │  │            │  │  Artist / Title                 │ │  │ │
-│  │  │  └────────────┘  └─────────────────────────────────┘ │  │ │
-│  │  │  ┌──────────────────────────────────────────────────┐│  │ │
-│  │  │  │   advancement-controls: ◂◂   advancement-play-state: advancement-pause-icon: ⏸  ▸▸  │  │ │
-│  │  │  └──────────────────────────────────────────────────┘│  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐   │
-│  │  Side Menu   │  │   YouTube    │  │      Settings        │   │
-│  │  ┌────────┐  │  │   Module     │  │  ┌────────────────┐  │   │
-│  │  │Playlist│  │  │  ┌────────┐  │  │  │  Sleep Timer   │  │   │
-│  │  │  List  │  │  │  │YoutubeK│  │  │  │  Preferences   │  │   │
-│  │  └────────┘  │  │  │  it    │  │  │  └────────────────┘  │   │
-│  └──────────────┘  │  └────────┘  │  └──────────────────────┘   │
-│                    │  ┌────────┐  │                              │
-│                    │  │ Kanna  │  │                              │
-│                    │  │(Parser)│  │                              │
-│                    │  └────────┘  │                              │
-│                    └──────────────┘                              │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Utility Layer                            │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │  SwiftyJSON  │  │    Push      │  │   Custom Views   │  │ │
-│  │  │              │  │  Handling    │  │                  │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │     YouTube API         │
-                 │   (Public Playlists)    │
-                 └─────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["zeroPlayer App"]
+        subgraph MVC["Main View Controller"]
+            subgraph Player["Music Player Interface"]
+                AW[Artwork]
+                TI["Track Info\nMarqueeLabel\nArtist / Title"]
+                PC["재생 컨트롤\n◂◂  ⏸  ▸▸"]
+            end
+        end
+        subgraph Side["Side Menu"]
+            PL[플레이리스트 목록]
+        end
+        subgraph YT["YouTube Module"]
+            YK[YoutubeKit]
+            KA[Kanna Parser]
+        end
+        subgraph SET["Settings"]
+            ST[슬립 타이머\n환경설정]
+        end
+        subgraph Util["Utility Layer"]
+            SJ[SwiftyJSON]
+            PH[Push Handling]
+            CV[Custom Views]
+        end
+    end
+
+    MVC --> Side
+    MVC --> YT
+    MVC --> SET
+    MVC --> Util
+    App --> API["YouTube API\n공개 플레이리스트"]
 ```
 
 ---

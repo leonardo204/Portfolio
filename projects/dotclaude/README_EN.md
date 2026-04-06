@@ -2,7 +2,7 @@
 
 🌐 **Language**: [한국어](./README.md) | [English](./README_EN.md)
 
-> Make Claude Code Smarter — Enhanced Claude Code Agent System
+> Make Claude Code Smarter — Claude Code Agent Harness
 
 ![Platform](https://img.shields.io/badge/platform-Claude%20Code-7C3AED)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)
@@ -13,7 +13,7 @@
 
 ## Overview
 
-**dotclaude** is a framework that enhances Claude Code's agent system. It enables more systematic and intelligent use of Claude Code through a pipeline of 7 specialized agents, SQLite-based context preservation across sessions, a real-time HUD dashboard, and Telegram notifications. The entire environment can be set up instantly with a single command (`/dotclaude-init`).
+**dotclaude** is a Claude Code-based agent harness. It enables more systematic and intelligent use of Claude Code through a pipeline of 7 specialized agents, SQLite-based context preservation across sessions, a real-time HUD dashboard, and Telegram notifications. The entire environment can be set up instantly with a single command (`/dotclaude-init`).
 
 ---
 
@@ -75,45 +75,35 @@
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     dotclaude Framework                          │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Agent Pipeline                            │ │
-│  │  ┌──────────┐ ┌───────────┐ ┌──────────┐ ┌─────────────┐  │ │
-│  │  │ Planner  │→│ Architect │→│  Ralph   │→│ Test        │  │ │
-│  │  │          │ │           │ │(Implmtr) │ │ Engineer    │  │ │
-│  │  └──────────┘ └───────────┘ └──────────┘ └─────────────┘  │ │
-│  │                                    │                        │ │
-│  │                                    ▼                        │ │
-│  │  ┌──────────┐ ┌───────────┐ ┌──────────┐                  │ │
-│  │  │ Debugger │ │ Reviewer  │←│ Verifier │                  │ │
-│  │  │          │ │           │ │          │                  │ │
-│  │  └──────────┘ └───────────┘ └──────────┘                  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Core Infrastructure                        │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Context DB  │ │   HUD        │ │   Hook System      │  │ │
-│  │  │  (SQLite)    │ │   Dashboard  │ │   (5 Scripts)      │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  │  ┌──────────────┐ ┌──────────────┐ ┌────────────────────┐  │ │
-│  │  │  Context     │ │  Telegram    │ │   Session          │  │ │
-│  │  │  Monitor     │ │  Messenger   │ │   Manager          │  │ │
-│  │  └──────────────┘ └──────────────┘ └────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Claude Code CLI                          │ │
-│  │  ┌─────────────────────────────────────────────────────┐   │ │
-│  │  │  CLAUDE.md  ←→  .claude/agents/  ←→  .claude/db/   │   │ │
-│  │  └─────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Pipeline[Agent Pipeline]
+        P[Planner] --> A[Architect]
+        A --> R[Ralph<br/>Implementer]
+        A --> T[Test Engineer]
+        R --> V[Verifier]
+        T --> V
+        V --> Rev[Reviewer]
+        D[Debugger] -.->|on error| R
+    end
+
+    subgraph Infra[Core Infrastructure]
+        DB[(Context DB<br/>SQLite)]
+        HUD[HUD Dashboard]
+        Hook[Hook System<br/>5 Scripts]
+        Mon[Context Monitor]
+        Tele[Telegram Messenger]
+        Sess[Session Manager]
+    end
+
+    Pipeline --> Infra
+
+    subgraph CLI[Claude Code CLI]
+        MD[CLAUDE.md] <--> Agents[.claude/agents/]
+        Agents <--> Store[.claude/db/]
+    end
+
+    Infra --> CLI
 ```
 
 ---
@@ -155,4 +145,4 @@
 
 ---
 
-*This project enhances Claude Code's agent system to provide a more systematic and intelligent AI development environment.*
+*This project is a Claude Code-based agent harness that provides a more systematic and intelligent AI development environment.*

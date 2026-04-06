@@ -33,27 +33,18 @@ WebSocket을 통한 실시간 이미지 프레임 수신 및 렌더링을 지원
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                 ImageCloudFramework                      │
-│                                                          │
-│  ┌────────────────┐  ┌────────────────┐                 │
-│  │   WebSocket    │  │     Frame      │                 │
-│  │    Client      │──│    Handler     │                 │
-│  └────────────────┘  └────────────────┘                 │
-│           │                   │                          │
-│           ▼                   ▼                          │
-│  ┌────────────────────────────────────────────────────┐ │
-│  │              Image Renderer                         │ │
-│  └────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────┘
-                          │
-                     WebSocket
-                          │
-                          ▼
-              ┌───────────────────────┐
-              │   Cloud Image Server  │
-              └───────────────────────┘
+```mermaid
+graph TD
+    subgraph ICF["ImageCloudFramework"]
+        WC["WebSocket Client"]
+        FH["Frame Handler"]
+        IR["Image Renderer"]
+        WC --> FH
+        WC --> IR
+        FH --> IR
+    end
+
+    ICF -- WebSocket --> CIS["Cloud Image Server"]
 ```
 
 ---

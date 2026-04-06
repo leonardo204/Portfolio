@@ -71,57 +71,34 @@ Listen to radio anytime, anywhere with just your Apple Watch and AirPods without
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      blackRadio Watch App                        │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                      Views Layer                            │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │ ContentView  │  │ PlayingView  │  │   VolumeView     │  │ │
-│  │  │ (Channel     │  │  (Now        │  │  (Volume         │  │ │
-│  │  │  Selection)  │  │   Playing)   │  │   Control)       │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              MarqueeText (Scroll Text)                │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                    Manager Layer                            │ │
-│  │  ┌──────────────────┐  ┌──────────────┐  ┌──────────────┐  │ │
-│  │  │  ProgramManager  │  │ StreamManager│  │ AudioPlayer  │  │ │
-│  │  │  - KBS Metadata  │  │ - Stream     │  │ - Audio      │  │ │
-│  │  │  - MBC Metadata  │  │   Connection │  │   Playback   │  │ │
-│  │  │  - SBS Metadata  │  │ - Connection │  │ - Volume     │  │ │
-│  │  │                  │  │   Management │  │   Control    │  │ │
-│  │  │                  │  │              │  │ - Background │  │ │
-│  │  └──────────────────┘  └──────────────┘  └──────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Utilities & Models                        │ │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │ │
-│  │  │ ProgramInfo  │  │  LogUtils    │  │ SwiftUI+Extension│  │ │
-│  │  │   (Model)    │  │   (Logging)  │  │    (Extensions)  │  │ │
-│  │  └──────────────┘  └──────────────┘  └──────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                   Watch Extension                           │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │        ComplicationController (Watch Face Integration)│  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-              ┌───────────────────────────────┐
-              │   Broadcasting APIs           │
-              │   (KBS / MBC / SBS)           │
-              │   - Program Metadata          │
-              │   - Audio Stream              │
-              └───────────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["blackRadio Watch App"]
+        subgraph Views["Views Layer"]
+            CV[ContentView\nChannel Selection]
+            PV[PlayingView\nNow Playing]
+            VV[VolumeView\nVolume Control]
+            MT[MarqueeText\nScroll Text]
+        end
+        subgraph Managers["Manager Layer"]
+            PM["ProgramManager\n- KBS Metadata\n- MBC Metadata\n- SBS Metadata"]
+            SM["StreamManager\n- Stream Connection\n- Connection Management"]
+            AP["AudioPlayer\n- Audio Playback\n- Volume Control\n- Background"]
+        end
+        subgraph Utils["Utilities & Models"]
+            PI[ProgramInfo\nModel]
+            LU[LogUtils\nLogging]
+            SE[SwiftUI+Extension\nExtensions]
+        end
+        subgraph Ext["Watch Extension"]
+            CC[ComplicationController\nWatch Face Integration]
+        end
+    end
+
+    Views --> Managers
+    Managers --> Utils
+    Utils --> Ext
+    App --> API["Broadcasting APIs\nKBS / MBC / SBS\n- Program Metadata\n- Audio Stream"]
 ```
 
 ---

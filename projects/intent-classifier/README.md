@@ -61,35 +61,25 @@
 
 ## 아키텍처
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   Intent Classifier Chat App                     │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │                  Electron Main Process                      │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │              Express Server (Port 13240)              │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌────────────────┐  │  │ │
-│  │  │  │  Intent    │  │   Model    │  │    Prompt      │  │  │ │
-│  │  │  │  Classifier│  │   Manager  │  │    Config      │  │  │ │
-│  │  │  └────────────┘  └────────────┘  └────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  │                           │                                 │ │
-│  │  ┌──────────────────────────────────────────────────────┐  │ │
-│  │  │                BrowserWindow (Chat UI)                │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌────────────────┐  │  │ │
-│  │  │  │  Message   │  │  Health    │  │    Model       │  │  │ │
-│  │  │  │  Input     │  │  Status    │  │    Selector    │  │  │ │
-│  │  │  └────────────┘  └────────────┘  └────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────┘ │
-│                              │                                   │
-│                              ▼                                   │
-│                 ┌─────────────────────────┐                     │
-│                 │      vLLM API Server    │                     │
-│                 │   (sLLM Chat Endpoint)  │                     │
-│                 └─────────────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph App["Intent Classifier Chat App"]
+        subgraph Main["Electron Main Process"]
+            subgraph Server["Express Server (Port 13240)"]
+                IC[Intent Classifier]
+                MM[Model Manager]
+                PC[Prompt Config]
+            end
+            subgraph BW["BrowserWindow (Chat UI)"]
+                MI[메시지 입력]
+                HS[Health 상태]
+                MS[모델 선택기]
+            end
+        end
+    end
+
+    Server --> BW
+    App --> vLLM["vLLM API Server\n(sLLM Chat Endpoint)"]
 ```
 
 ---

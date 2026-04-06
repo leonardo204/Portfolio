@@ -65,51 +65,37 @@
 
 ## 아키텍처
 
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│                          MyTammi System                              │
-│                                                                      │
-│  ┌────────────────────────────────────────────────────────────────┐  │
-│  │                   Chat UI (Vue 3 + Naive UI)                   │  │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌─────────────────────┐  │  │
-│  │  │  Chat Input  │  │  Message     │  │  Session Manager    │  │  │
-│  │  │  Interface   │  │  Stream      │  │  & History          │  │  │
-│  │  └──────────────┘  └──────────────┘  └─────────────────────┘  │  │
-│  └────────────────────────────┬───────────────────────────────────┘  │
-│                               │                                      │
-│                               ▼                                      │
-│  ┌────────────────────────────────────────────────────────────────┐  │
-│  │                Core Agent (NestJS + LangGraph)                 │  │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌─────────────────────┐  │  │
-│  │  │   Intent     │  │   Session    │  │   Slot Filling      │  │  │
-│  │  │   Router     │  │   Cache      │  │   Engine            │  │  │
-│  │  │ (18 domains) │  │              │  │                     │  │  │
-│  │  └──────────────┘  └──────────────┘  └─────────────────────┘  │  │
-│  └────────────────────────────┬───────────────────────────────────┘  │
-│                               │                                      │
-│                               ▼                                      │
-│  ┌────────────────────────────────────────────────────────────────┐  │
-│  │              Service Agents (8 Specialized Agents)             │  │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌───────────────────────┐  │  │
-│  │  │  Chat       │  │  Schedule   │  │  Content Search       │  │  │
-│  │  │  Agent      │  │  Agent      │  │  Agent                │  │  │
-│  │  └─────────────┘  └─────────────┘  └───────────────────────┘  │  │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌───────────────────────┐  │  │
-│  │  │  Domain     │  │  Web Search │  │  External API         │  │  │
-│  │  │  Logic      │  │  (Gemini    │  │  Integration          │  │  │
-│  │  │  Agent      │  │  Grounding) │  │  Agent                │  │  │
-│  │  └─────────────┘  └─────────────┘  └───────────────────────┘  │  │
-│  └────────────────────────────────────────────────────────────────┘  │
-│                               │                                      │
-│                               ▼                                      │
-│  ┌────────────────────────────────────────────────────────────────┐  │
-│  │                    External Services                           │  │
-│  │  ┌──────────┐  ┌──────────────┐  ┌─────────────────────────┐  │  │
-│  │  │  Gemini  │  │  TV Schedule │  │  Content Metadata       │  │  │
-│  │  │  2.5 API │  │  API         │  │  API                    │  │  │
-│  │  └──────────┘  └──────────────┘  └─────────────────────────┘  │  │
-│  └────────────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    User([사용자]) --> UI[Chat UI<br/>Vue 3 + Naive UI]
+    UI -->|자연어 질의| Core[Core Agent<br/>NestJS + LangGraph]
+
+    subgraph Core Agent
+        Core --> Intent[Intent Router<br/>18 도메인 · 72 액션]
+        Core --> Slot[Slot Filling Engine]
+        Core --> Cache[Session Cache]
+    end
+
+    Intent -->|라우팅| Agents
+
+    subgraph Agents[Service Agents]
+        A1[Chat Agent]
+        A2[Schedule Agent]
+        A3[Content Search Agent]
+        A4[Domain Logic Agent]
+        A5[Web Search Agent<br/>Gemini Grounding]
+        A6[External API Agent]
+    end
+
+    Agents --> Ext
+
+    subgraph Ext[External Services]
+        Gemini[Gemini 2.5 API]
+        TV[TV Schedule API]
+        Meta[Content Metadata API]
+    end
+
+    Ext -->|스트리밍 응답| UI
 ```
 
 ---

@@ -40,30 +40,23 @@ It supports AES encrypted communication, image frame caching, animation effects,
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    RClient ICS Library                       │
-│                                                              │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │   Network   │  │   Decrypt   │  │     Animation       │  │
-│  │   Handler   │──│   (AES)     │──│     Compositor      │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
-│         │                                    │               │
-│         ▼                                    ▼               │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                   Frame Cache (icache3)                  ││
-│  └─────────────────────────────────────────────────────────┘│
-│                            │                                 │
-│                            ▼                                 │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              Image Decoder (PNG/JPEG/WebP)               ││
-│  └─────────────────────────────────────────────────────────┘│
-│                            │                                 │
-│                            ▼                                 │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                   Graphics Layer                         ││
-│  └─────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Lib["RClient ICS Library"]
+        NH[Network Handler]
+        AES[Decrypt - AES]
+        AC[Animation Compositor]
+        FC[(Frame Cache - icache3)]
+        ID[Image Decoder\nPNG / JPEG / WebP]
+        GL[Graphics Layer]
+    end
+
+    NH --> AES
+    AES --> AC
+    NH --> FC
+    AC --> FC
+    FC --> ID
+    ID --> GL
 ```
 
 ---
