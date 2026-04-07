@@ -79,8 +79,8 @@ graph TD
     end
 
     subgraph System["System Integration"]
-        HD[Helper Daemon<br/>(Privileged)]
-        SMC[SMC Charge Control<br/>Read/Write Battery Registers]
+        HD["Helper Daemon<br/>(Privileged)"]
+        SMC["SMC Charge Control<br/>Read/Write Battery Registers"]
     end
 
     UI --> Core

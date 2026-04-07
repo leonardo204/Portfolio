@@ -79,8 +79,8 @@ graph TD
     end
 
     subgraph System["시스템 통합"]
-        HD[Helper Daemon<br/>(권한 분리)]
-        SMC[SMC 충전 제어<br/>배터리 레지스터 읽기/쓰기]
+        HD["Helper Daemon<br/>(권한 분리)"]
+        SMC["SMC 충전 제어<br/>배터리 레지스터 읽기/쓰기"]
     end
 
     UI --> Core
