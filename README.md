@@ -50,6 +50,7 @@
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM 기반 Intent 분류 테스트 도구 | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
+| [dotclaude](./projects/dotclaude/) | Claude Code 기반 에이전트 하네스 | `TypeScript` `Node.js` `SQLite` |
 
 ### STB Middleware (2012-2022)
 
@@ -76,7 +77,6 @@
 | [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [News Origin](./projects/news-origin/) | 뉴스 기원 추적 및 전파 경로 시각화 | `Python` `React` `BERT` `Azure` | 2026 | - |
 | [BatteryAgent](./projects/battery-agent/) | macOS 메뉴바 배터리 충전 제한 관리 | `Swift` `SwiftUI` `SMC` | 2026 | - |
-| [dotclaude](./projects/dotclaude/) | Claude Code 기반 에이전트 하네스 | `TypeScript` `Node.js` `SQLite` | 2026 | - |
 | [MiniCalendar](./projects/mini-calendar/) | macOS 메뉴바 캘린더 (공휴일 지원) | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MarkdownEditor](./projects/markdown-editor/) | 실시간 프리뷰 마크다운 에디터 | `Swift` `SwiftUI` `Mermaid` | 2025 | <a href="https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI 기반 로또 번호 분석 앱 | `Swift` `SwiftUI` `REST API` | 2025 | <a href="https://apps.apple.com/kr/app/simplesecretrotto/id6740446215"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |

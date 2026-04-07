@@ -50,6 +50,7 @@ Projects from professional work.
 | [Intent Classifier Chat](./projects/intent-classifier/) | sLLM-based intent classification test tool | `Electron` `Express` `vLLM` |
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
+| [dotclaude](./projects/dotclaude/) | Claude Code-based agent harness | `TypeScript` `Node.js` `SQLite` |
 
 ### STB Middleware (2012-2022)
 
@@ -76,7 +77,6 @@ Personal macOS/iOS/watchOS app projects.
 | [Wandery](./projects/wander/) | AI travel timeline & story generation app | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [News Origin](./projects/news-origin/) | News source tracking & propagation visualization | `Python` `React` `BERT` `Azure` | 2026 | - |
 | [BatteryAgent](./projects/battery-agent/) | macOS menu bar battery charge limit manager | `Swift` `SwiftUI` `SMC` | 2026 | - |
-| [dotclaude](./projects/dotclaude/) | Claude Code-based agent harness | `TypeScript` `Node.js` `SQLite` | 2026 | - |
 | [MiniCalendar](./projects/mini-calendar/) | macOS menu bar calendar with holidays | `Swift` `SwiftUI` `AppKit` | 2025 | <a href="https://apps.apple.com/kr/app/calendarminibar/id6756901223?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [MarkdownEditor](./projects/markdown-editor/) | Real-time preview markdown editor | `Swift` `SwiftUI` `Mermaid` | 2025 | <a href="https://apps.apple.com/kr/app/markcharteditor/id6756916654?mt=12"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [SimpleSecretRotto](./projects/simple-secret-rotto/) | AI-powered lottery number analysis app | `Swift` `SwiftUI` `REST API` | 2025 | <a href="https://apps.apple.com/kr/app/simplesecretrotto/id6740446215"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
