@@ -42,20 +42,6 @@ Listen to radio anytime, anywhere with just your Apple Watch and AirPods without
 
 ---
 
-## Screenshots
-
-> Screenshots coming soon
-
-<!--
-### Channel Selection Screen
-![Channel Selection](./images/channel-select.png)
-
-### Now Playing Screen
-![Now Playing](./images/now-playing.png)
--->
-
----
-
 ## Tech Stack
 
 | Category | Technology |

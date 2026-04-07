@@ -49,12 +49,6 @@ It smartly combines user preferences with AI recommendations to provide insights
 
 ---
 
-## Screenshots
-
-> Screenshots coming soon
-
----
-
 ## Tech Stack
 
 | Category | Technology |
