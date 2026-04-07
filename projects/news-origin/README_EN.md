@@ -78,9 +78,9 @@ graph TD
     end
 
     subgraph DataLayer["Data Layer"]
-        VDB[Vector DB<br/>(Embeddings)]
+        VDB["Vector DB<br/>(Embeddings)"]
         RDB[Relational DB]
-        RSS[Google News<br/>RSS Feed]
+        RSS["Google News<br/>RSS Feed"]
     end
 
     Frontend --> Backend

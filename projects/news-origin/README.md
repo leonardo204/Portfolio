@@ -78,9 +78,9 @@ graph TD
     end
 
     subgraph 데이터["데이터 레이어"]
-        VDB[벡터 DB<br/>(임베딩)]
+        VDB["벡터 DB<br/>(임베딩)"]
         RDB[관계형 DB]
-        RSS[Google News<br/>RSS 피드]
+        RSS["Google News<br/>RSS 피드"]
     end
 
     프론트엔드 --> 백엔드
