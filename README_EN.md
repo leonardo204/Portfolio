@@ -70,9 +70,9 @@ Projects from professional work.
 
 ## Side Projects
 
-Personal macOS/iOS/watchOS app projects.
+Personal app and web service projects.
 
-| Project | Description | Tech | Year | App Store |
+| Project | Description | Tech | Year | Link |
 |:--------|:------------|:-----|:----:|:----:|
 | [PortfolioLive](./projects/portfolio-live/) | AI-powered interactive portfolio site | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [Wandery](./projects/wander/) | AI travel timeline & story generation app | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |

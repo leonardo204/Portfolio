@@ -14,9 +14,6 @@
 
 **PortfolioLive** is an interactive portfolio site where visitors can ask about career history, technical skills, and projects in natural language through an AI chat interface. A LangGraph-based Agentic AI classifies questions and retrieves relevant information via pgvector RAG to provide accurate answers. Projects are automatically synchronized through GitHub Webhooks, and an admin dashboard enables content management.
 
-- **Live Site**: [me.zerolive.co.kr](https://me.zerolive.co.kr)
-- **GitHub**: [leonardo204/PortfolioLive](https://github.com/leonardo204/PortfolioLive)
-
 ---
 
 ## Key Features
