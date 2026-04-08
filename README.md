@@ -72,7 +72,7 @@
 
 개인적으로 진행한 앱 및 웹 서비스 프로젝트입니다.
 
-| 프로젝트 | 설명 | 기술 | 연도 | Link |
+| 프로젝트 | 설명 | 기술 | 연도 | Live Link |
 |:--------|:-----|:-----|:----:|:----:|
 | [PortfolioLive](./projects/portfolio-live/) | AI 대화형 포트폴리오 사이트 | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
