@@ -75,6 +75,7 @@ Personal app and web service projects.
 | Project | Description | Tech | Year | Live Link |
 |:--------|:------------|:-----|:----:|:----:|
 | [PortfolioLive](./projects/portfolio-live/) | AI-powered interactive portfolio site | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
+| [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard-based Korean IP/IPTV VPN gateway | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |
 | [Wandery](./projects/wander/) | AI travel timeline & story generation app | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [News Origin](./projects/news-origin/) | News source tracking & propagation visualization | `Python` `React` `BERT` `Azure` | 2026 | - |
 | [BatteryAgent](./projects/battery-agent/) | macOS menu bar battery charge limit manager | `Swift` `SwiftUI` `SMC` | 2026 | - |

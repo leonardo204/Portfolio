@@ -75,6 +75,7 @@
 | 프로젝트 | 설명 | 기술 | 연도 | Live Link |
 |:--------|:-----|:-----|:----:|:----:|
 | [PortfolioLive](./projects/portfolio-live/) | AI 대화형 포트폴리오 사이트 | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
+| [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard 기반 한국 IP/IPTV VPN 게이트웨이 | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |
 | [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [News Origin](./projects/news-origin/) | 뉴스 기원 추적 및 전파 경로 시각화 | `Python` `React` `BERT` `Azure` | 2026 | - |
 | [BatteryAgent](./projects/battery-agent/) | macOS 메뉴바 배터리 충전 제한 관리 | `Swift` `SwiftUI` `SMC` | 2026 | - |
