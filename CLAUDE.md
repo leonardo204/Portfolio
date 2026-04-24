@@ -36,8 +36,10 @@
 
 - [Context DB](Ref-docs/claude/context-db.md) — SQLite 기반 세션/태스크/결정 저장소
 - [Context Monitor](Ref-docs/claude/context-monitor.md) — HUD + compaction 감지/복구
+- [Hooks](Ref-docs/claude/hooks.md) — 5개 자동 실행 Hook 상세
 - [컨벤션](Ref-docs/claude/conventions.md) — 커밋, 주석, 로깅 규칙
 - [셋업](Ref-docs/claude/setup.md) — 새 환경 초기 설정
+- [Agent Delegation](Ref-docs/claude/agent-delegation.md) — 에이전트 위임/파이프라인 상세
 
 ### 핵심 규칙
 
@@ -50,4 +52,4 @@
 
 ---
 
-*최종 업데이트: 2026-04-06*
+*최종 업데이트: 2026-04-24*
