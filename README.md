@@ -41,6 +41,7 @@
 |:--------|:-----|:-----|
 | [MyTammi](./projects/mytammi/) | 베트남 TV 미디어 AI 멀티 에이전트 어시스턴트 *(회사 프로젝트)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
+| [FlipMD](./projects/flipbook-maker/) | Figma 플립북 → Confluence 한국어 마크다운 변환 macOS 앱 | `Tauri 2` `React` `Rust` `Claude CLI` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA v2 (Tauri)](./projects/summa2-tauri/) | 실시간 스트리밍 전사 및 회의록 생성 (v2) | `Tauri` `Rust` `SimulWhisper` |

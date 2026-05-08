@@ -41,6 +41,7 @@ Projects from professional work.
 |:--------|:------------|:-----|
 | [MyTammi](./projects/mytammi/) | Vietnamese TV media AI multi-agent assistant *(company project)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI-powered Figma → Markdown conversion plugin | `TypeScript` `React` `Figma API` |
+| [FlipMD](./projects/flipbook-maker/) | macOS app converting Figma flipbooks → Korean Markdown on Confluence | `Tauri 2` `React` `Rust` `Claude CLI` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | Chat app for AI agent platform integration testing | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A protocol-based multi-agent orchestration | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA v2 (Tauri)](./projects/summa2-tauri/) | Real-time streaming transcription & meeting minutes (v2) | `Tauri` `Rust` `SimulWhisper` |
