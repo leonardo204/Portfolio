@@ -75,6 +75,7 @@
 
 | 프로젝트 | 설명 | 기술 | 연도 | Live Link |
 |:--------|:-----|:-----|:----:|:----:|
+| [RoundOn](./projects/round-on/) | 탭 한 번으로 기록하는 미니멀 골프 스코어 카운터 (iPhone + Apple Watch) | `Swift` `SwiftUI` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/us/app/roundon/id6776994717"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [PortfolioLive](./projects/portfolio-live/) | AI 대화형 포트폴리오 사이트 | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard 기반 한국 IP/IPTV VPN 게이트웨이 | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |
 | [Wandery](./projects/wander/) | AI 여행 타임라인 & 스토리 생성 앱 | `Swift` `SwiftUI` `SwiftData` | 2026 | <a href="https://apps.apple.com/kr/app/wandery/id6759185541"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
@@ -120,6 +121,7 @@
 ![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?style=for-the-badge&logo=cloudflareworkers&logoColor=white)
 ![gRPC](https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 #### Tools
