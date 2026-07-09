@@ -34,22 +34,22 @@
 
 ### 상세 문서
 
-- [Context DB](Ref-docs/claude/context-db.md) — SQLite 기반 세션/태스크/결정 저장소
-- [Context Monitor](Ref-docs/claude/context-monitor.md) — HUD + compaction 감지/복구
-- [Hooks](Ref-docs/claude/hooks.md) — 5개 자동 실행 Hook 상세
-- [컨벤션](Ref-docs/claude/conventions.md) — 커밋, 주석, 로깅 규칙
-- [셋업](Ref-docs/claude/setup.md) — 새 환경 초기 설정
-- [Agent Delegation](Ref-docs/claude/agent-delegation.md) — 에이전트 위임/파이프라인 상세
+- [Context DB](ref-docs/claude/context-db.md) — SQLite 기반 세션/태스크/결정 저장소
+- [Context Monitor](ref-docs/claude/context-monitor.md) — HUD + compaction 감지/복구
+- [Hooks](ref-docs/claude/hooks.md) — 5개 자동 실행 Hook 상세
+- [컨벤션](ref-docs/claude/conventions.md) — 커밋, 주석, 로깅 규칙
+- [셋업](ref-docs/claude/setup.md) — 새 환경 초기 설정
+- [Agent Delegation](ref-docs/claude/agent-delegation.md) — 에이전트 위임/파이프라인 상세
 
 ### 핵심 규칙
 
 - 프로젝트 추가 시 README.md + README_EN.md 동시 업데이트
 - 프로젝트 상세 페이지는 `projects/<name>/` 하위에 한/영 README 쌍으로 생성
 - 테이블 포맷: `| [Name](./projects/name/) | 설명 | \`Tech1\` \`Tech2\` |`
-- 아키텍처/워크플로우 다이어그램은 **Mermaid** 사용 (ASCII art 금지) → [다이어그램 가이드](Ref-docs/diagram-guide.md)
+- 아키텍처/워크플로우 다이어그램은 **Mermaid** 사용 (ASCII art 금지) → [다이어그램 가이드](ref-docs/diagram-guide.md)
 - 프로젝트 추가/변경 시 메인 README **Tech Stack** 배지도 동기화 확인
 - Side Projects 테이블: `| [Name](./projects/name/) | 설명 | \`Tech\` | 연도 | Live Link |`
 
 ---
 
-*최종 업데이트: 2026-06-16*
+*최종 업데이트: 2026-07-09*
