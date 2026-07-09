@@ -75,6 +75,7 @@ Personal app and web service projects.
 
 | Project | Description | Tech | Year | Live Link |
 |:--------|:------------|:-----|:----:|:----:|
+| [liveTranscript](./projects/live-transcript/) | macOS menu bar app for real-time system audio translation subtitles | `Swift` `Core Audio` `Gemini Live` | 2026 | [🔗](https://github.com/leonardo204/liveTranscript) |
 | [RoundOn](./projects/round-on/) | Minimalist golf score counter, one tap per stroke (iPhone + Apple Watch) | `Swift` `SwiftUI` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/us/app/roundon/id6776994717"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [PortfolioLive](./projects/portfolio-live/) | AI-powered interactive portfolio site | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard-based Korean IP/IPTV VPN gateway | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |

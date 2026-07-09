@@ -75,6 +75,7 @@
 
 | 프로젝트 | 설명 | 기술 | 연도 | Live Link |
 |:--------|:-----|:-----|:----:|:----:|
+| [liveTranscript](./projects/live-transcript/) | 시스템 오디오 실시간 번역 자막 macOS 메뉴바 앱 | `Swift` `Core Audio` `Gemini Live` | 2026 | [🔗](https://github.com/leonardo204/liveTranscript) |
 | [RoundOn](./projects/round-on/) | 탭 한 번으로 기록하는 미니멀 골프 스코어 카운터 (iPhone + Apple Watch) | `Swift` `SwiftUI` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/us/app/roundon/id6776994717"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [PortfolioLive](./projects/portfolio-live/) | AI 대화형 포트폴리오 사이트 | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard 기반 한국 IP/IPTV VPN 게이트웨이 | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |
