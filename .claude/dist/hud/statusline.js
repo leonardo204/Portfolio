@@ -6,8 +6,9 @@ import {
   readdirSync,
   statSync
 } from "node:fs";
-import { join } from "node:path";
-import { execSync } from "node:child_process";
+import { join, dirname } from "node:path";
+import { execSync, spawn } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 var C = {
   red: "\x1B[31m",
@@ -22,6 +23,17 @@ var HUD_CACHE_FILE = join(homedir(), ".claude", ".hud_cache");
 var AGENT_CACHE_FILE = join(homedir(), ".claude", ".agent_cache");
 var AGENT_CACHE_TTL = 5e3;
 var STALE_SUBAGENT_MS = Number(process.env.DOTCLAUDE_STALE_SUBAGENT_MS) || 12e4;
+function normalizeStdinLimit(x) {
+  if (!x || x.used_percentage == null) return void 0;
+  let resets_at;
+  if (typeof x.resets_at === "number") {
+    const ms = x.resets_at > 1e12 ? x.resets_at : x.resets_at * 1e3;
+    resets_at = new Date(ms).toISOString();
+  } else if (typeof x.resets_at === "string") {
+    resets_at = x.resets_at;
+  }
+  return { utilization: x.used_percentage, resets_at };
+}
 async function readStdin() {
   if (process.stdin.isTTY) return null;
   const chunks = [];
@@ -76,6 +88,41 @@ function updateCtxState(cwd, percent) {
   } catch {
   }
   return state;
+}
+var COST_CACHE_FILE = join(homedir(), ".claude", ".hud_cost_cache.json");
+var COST_STALE_MS = 8e3;
+function localDate() {
+  const d = /* @__PURE__ */ new Date();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+function spawnCostWorker(cwd) {
+  try {
+    const worker = join(dirname(fileURLToPath(import.meta.url)), "cost.js");
+    if (!existsSync(worker)) return;
+    const child = spawn(process.execPath, [worker, cwd], {
+      detached: true,
+      stdio: "ignore"
+    });
+    child.unref();
+  } catch {
+  }
+}
+function loadCost(cwd) {
+  let entry;
+  try {
+    if (existsSync(COST_CACHE_FILE)) {
+      const map = JSON.parse(readFileSync(COST_CACHE_FILE, "utf8"));
+      entry = map[cwd];
+    }
+  } catch {
+  }
+  const stale = !entry || Date.now() - entry.ts > COST_STALE_MS || entry.date !== localDate();
+  if (stale) spawnCostWorker(cwd);
+  if (!entry) return null;
+  const today = entry.date === localDate() ? entry.today : 0;
+  return { total: entry.total, today };
 }
 function loadHudCache() {
   try {
@@ -189,9 +236,19 @@ function countSubagents(sessionId) {
   }
   return result;
 }
+function fmtUsd(n) {
+  if (n >= 100) return `$${n.toFixed(0)}`;
+  if (n >= 10) return `$${n.toFixed(1)}`;
+  return `$${n.toFixed(2)}`;
+}
+function renderCost(c) {
+  const color = c.total >= 200 ? C.red : c.total >= 50 ? C.yellow : C.green;
+  const todayPart = c.today > 0 ? ` ${C.dim}(today ${fmtUsd(c.today)})${C.reset}` : "";
+  return `${color}${fmtUsd(c.total)}${C.reset}${todayPart}`;
+}
 function renderContext(percent) {
-  const color = percent >= 80 ? C.red : percent >= 60 ? C.yellow : C.green;
-  const suffix = percent >= 85 ? " CRITICAL" : percent >= 75 ? " COMPRESS?" : "";
+  const color = percent >= 85 ? C.red : percent >= 70 ? C.yellow : C.green;
+  const suffix = percent >= 90 ? " CRITICAL" : percent >= 80 ? " COMPRESS?" : "";
   return `ctx:${color}${percent}%${suffix}${C.reset}`;
 }
 var HUD_DISABLED_FILE = join(homedir(), ".claude", ".hud_disabled");
@@ -218,13 +275,20 @@ async function main() {
     }
     const branchPart = branchName ? ` ${C.dim}(${C.reset}${C.green}${branchName}${C.reset}${C.dim})${C.reset}` : "";
     parts.push(`${C.cyan}${shortenCwd(cwd)}${C.reset}${branchPart}`);
-    const cache = loadHudCache();
+    const cost = loadCost(cwd);
+    if (cost && cost.total > 0) {
+      parts.push(renderCost(cost));
+    }
+    const sl = stdin.rate_limits;
+    const slFive = normalizeStdinLimit(sl?.five_hour);
+    const slSeven = normalizeStdinLimit(sl?.seven_day);
+    const cache = slFive && slSeven ? null : loadHudCache();
     const limitParts = [];
-    limitParts.push(renderLimit("5h", cache?.five_hour));
-    limitParts.push(renderLimit("wk", cache?.seven_day));
-    const staleMinutes = cache?._ts ? (Date.now() - cache._ts) / 6e4 : Infinity;
-    if (cache?._ok === false && staleMinutes > 10) {
-      limitParts.push(`${C.red}auth?${C.reset}`);
+    limitParts.push(renderLimit("5h", slFive ?? cache?.five_hour));
+    limitParts.push(renderLimit("wk", slSeven ?? cache?.seven_day));
+    if (cache && cache._ok === false) {
+      const staleMinutes = cache._ts ? (Date.now() - cache._ts) / 6e4 : Infinity;
+      if (staleMinutes > 10) limitParts.push(`${C.red}auth?${C.reset}`);
     }
     if (limitParts.length > 0) {
       parts.push(limitParts.join(" "));
