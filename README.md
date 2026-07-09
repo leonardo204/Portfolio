@@ -42,6 +42,7 @@
 | [MyTammi](./projects/mytammi/) | 베트남 TV 미디어 AI 멀티 에이전트 어시스턴트 *(회사 프로젝트)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
 | [FlipMD](./projects/flipbook-maker/) | Figma · Axshare 플립북 → Confluence 한국어 마크다운 변환 macOS 앱 | `Tauri 2` `React 19` `Playwright` `Claude CLI` |
+| [liveTranscript](./projects/live-transcript/) | 시스템 오디오 실시간 번역 자막 macOS 메뉴바 앱 | `Swift` `Core Audio` `Gemini Live` |
 | [VTT Media AI Agent Chat](./projects/vtt-assistant-chat/) | AI 에이전트 플랫폼 연동 테스트 채팅 앱 | `Electron` `Node.js` `Express` |
 | [A2A Multi-Agent System](./projects/a2a-sample/) | A2A 프로토콜 기반 멀티 에이전트 오케스트레이션 | `Python` `FastAPI` `Azure OpenAI` |
 | [SUMMA v2 (Tauri)](./projects/summa2-tauri/) | 실시간 스트리밍 전사 및 회의록 생성 (v2) | `Tauri` `Rust` `SimulWhisper` |
@@ -75,7 +76,6 @@
 
 | 프로젝트 | 설명 | 기술 | 연도 | Live Link |
 |:--------|:-----|:-----|:----:|:----:|
-| [liveTranscript](./projects/live-transcript/) | 시스템 오디오 실시간 번역 자막 macOS 메뉴바 앱 | `Swift` `Core Audio` `Gemini Live` | 2026 | [🔗](https://github.com/leonardo204/liveTranscript) |
 | [RoundOn](./projects/round-on/) | 탭 한 번으로 기록하는 미니멀 골프 스코어 카운터 (iPhone + Apple Watch) | `Swift` `SwiftUI` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/us/app/roundon/id6776994717"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [PortfolioLive](./projects/portfolio-live/) | AI 대화형 포트폴리오 사이트 | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
 | [zerolive-vpn](./projects/zerolive-vpn/) | WireGuard 기반 한국 IP/IPTV VPN 게이트웨이 | `WireGuard` `Docker` `udpxy` | 2026 | [🔗](https://vpn.zerolive.co.kr) |
