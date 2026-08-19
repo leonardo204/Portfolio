@@ -53,6 +53,7 @@
 | [Speech Tester](./projects/speech-tester/) | TTS 및 음성 테스트 자동화 도구 | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent 성능 모니터링 및 시각화 | `Electron` `Chart.js` `ADB` |
 | [dotclaude](./projects/dotclaude/) | Claude Code 기반 에이전트 하네스 | `TypeScript` `Node.js` `SQLite` |
+| [naby](./projects/naby/) | 신뢰 학습형 로컬-퍼스트 개인 AI 에이전트 데스크톱 앱 | `Electron` `TypeScript` `Claude Agent SDK` |
 
 ### STB Middleware (2012-2022)
 

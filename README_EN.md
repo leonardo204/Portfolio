@@ -53,6 +53,7 @@ Projects from professional work.
 | [Speech Tester](./projects/speech-tester/) | TTS and speech test automation tool | `Python` `Flask` `Google TTS` |
 | [Trace Tool](./projects/trace-tool/) | AI Agent performance monitoring & visualization | `Electron` `Chart.js` `ADB` |
 | [dotclaude](./projects/dotclaude/) | Claude Code-based agent harness | `TypeScript` `Node.js` `SQLite` |
+| [naby](./projects/naby/) | Trust-learning local-first personal AI agent desktop app | `Electron` `TypeScript` `Claude Agent SDK` |
 
 ### STB Middleware (2012-2022)
 
