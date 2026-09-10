@@ -39,6 +39,7 @@
 
 | 프로젝트 | 설명 | 기술 |
 |:--------|:-----|:-----|
+| [RMS AI](./projects/rms-ai/) | STB 원격관리 제품 AI 기능 개발 리딩 — Agentic 챗봇 · 이상탐지 (IBC 2026 출품) *(회사 프로젝트)* | `LangGraph` `FastAPI` `React` `Gemini` |
 | [MyTammi](./projects/mytammi/) | 베트남 TV 미디어 AI 멀티 에이전트 어시스턴트 *(회사 프로젝트)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI 기반 Figma → Markdown 변환 플러그인 | `TypeScript` `React` `Figma API` |
 | [FlipMD](./projects/flipbook-maker/) | Figma · Axshare 플립북 → Confluence 한국어 마크다운 변환 macOS 앱 | `Tauri 2` `React 19` `Playwright` `Claude CLI` |

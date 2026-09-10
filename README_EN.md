@@ -39,6 +39,7 @@ Projects from professional work.
 
 | Project | Description | Tech |
 |:--------|:------------|:-----|
+| [RMS AI](./projects/rms-ai/) | Led AI feature development for an STB remote management product — agentic chatbot · anomaly detection (IBC 2026) *(company project)* | `LangGraph` `FastAPI` `React` `Gemini` |
 | [MyTammi](./projects/mytammi/) | Vietnamese TV media AI multi-agent assistant *(company project)* | `NestJS` `Vue 3` `Gemini` `LangGraph` |
 | [Figma to Markdown](./projects/figma-to-markdown/) | AI-powered Figma → Markdown conversion plugin | `TypeScript` `React` `Figma API` |
 | [FlipMD](./projects/flipbook-maker/) | macOS app converting Figma · Axshare flipbooks → Korean Markdown on Confluence | `Tauri 2` `React 19` `Playwright` `Claude CLI` |
