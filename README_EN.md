@@ -78,6 +78,7 @@ Personal app and web service projects.
 
 | Project | Description | Tech | Year | Live Link |
 |:--------|:------------|:-----|:----:|:----:|
+| [Hamzzi Tarot](./projects/hamzzi-tarot/) | Tarot app where mascot Hamzzi draws and reads your cards at length | `Swift` `SwiftUI` `Metal` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/app/id6825188179"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [HamzziDiet](./projects/hamzzi-diet/) | Diet app that logs weight and meals from photos with AI | `Swift` `SwiftUI` `SwiftData` `HealthKit` | 2026 | <a href="https://apps.apple.com/app/id6806743562"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [RoundOn](./projects/round-on/) | Minimalist golf score counter, one tap per stroke (iPhone + Apple Watch) | `Swift` `SwiftUI` `Cloudflare Workers` | 2026 | <a href="https://apps.apple.com/us/app/roundon/id6776994717"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="20"></a> |
 | [PortfolioLive](./projects/portfolio-live/) | AI-powered interactive portfolio site | `Next.js` `FastAPI` `LangGraph` | 2026 | [🔗](https://me.zerolive.co.kr) |
